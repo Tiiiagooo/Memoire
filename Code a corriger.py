@@ -110,12 +110,13 @@ for z in lignes_chanson:
     #ici je créer une expression pour récuperer tous les mots en début de ligne, 
     #certain commençant par "j'" ou "c'" d'autre par un tiret "un-mot", je ne sais pas s'il y a
     #d'autre mot différent.
-
+#------------------------------------------------------------------------------------------------------------ 
     for m in match:
         mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
         print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
         if mot.istitle(): #si le mot possède une majuscule je le met sans maj.
             mot = mot.lower()
+#------------------------------------------------------------------------------------------------------------
             if mot in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
                 print("le mot est dans glaff")   #a un lieu de ma liste des lieux
                 if mot in vrai_entite_nomme:     #SINON je l'affiche .
@@ -128,7 +129,7 @@ for z in lignes_chanson:
                     print(lignes_chanson, "\n")
                     res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]  #je remplace 
                     lignes_chanson = res               #l'ancienne ligne par une nouvelle ligne.                            
-
+#------------------------------------------------------------------------------------------------------------
 
             if mot not in voc_glaff:            #s'il est pas dans le glaff je fait le même procédé ↑.
                 print("le mot est pas dans glaff")
@@ -144,3 +145,7 @@ print(lignes_chanson)
 
 
 # # On observe que le traitement fonctionne partout sauf pour Mini-moke
+
+# ## test pour github
+
+# # test 2
