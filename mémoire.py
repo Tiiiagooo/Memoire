@@ -16,7 +16,7 @@
 #ouverture et lecture des json
 import json
 def ouvrir_json(chemin):
-    f = open(chemin, encoding="utf-8")
+    f = open(chemin, encoding="UTF-8")
     toto = json.load(f)
     f.close()
     return toto
@@ -65,7 +65,7 @@ print(tous_les_txt)
 
 # # Création d'une liste lieux de paris 
 
-# In[4]:
+# In[18]:
 
 
 #création d'une liste des lieux de paris
@@ -93,7 +93,9 @@ from nltk.tokenize import word_tokenize
 import re
 import spacy
 
-nlp = spacy.load('fr_core_news_sm')
+nlp = spacy.load('fr_core_news_sm') #modèle small
+#nlp = spacy.load('') #modèle medium
+#nlp = spacy.load('fr_core_web_lg') #modèle large
 compteur = 0
 tokenizer = nltk.RegexpTokenizer(r"(\w+,\w+|\w+-\w+|\w+\.\w+\.\w+|\w+\S|\w+|\S|\w+\S|\?|\!)") #Pour les mots du texte javai pour le 1er
                                                                                               #600 résultats
@@ -202,10 +204,8 @@ for element in start:
     #print(essaie)
     proportion_EN_spacy[titre] = essaie[count]
     count += 1
-    with open("proportion/proportion Entite nomme spacy.json", "w") as w:
-        #out = [a, b]
-        w.write(json.dumps(proportion_EN_spacy, indent=2))
-        
+with open("proportion/proportion Entite nomme spacy.json", "w") as w:
+    w.write(json.dumps(proportion_EN_spacy, indent=2))
 
 
 # In[8]:
@@ -273,8 +273,8 @@ for element in start:
             print("0\n")
             en_Match[titre] = ["no match", 0, "none"]
             
-        with open("proportion/proportion Entite matché.json", "w") as w:
-            w.write(json.dumps(en_Match, indent=2))       
+with open("proportion/proportion Entite matché.json", "w") as w:
+    w.write(json.dumps(en_Match, indent=2))       
             
             
 print(len(Proportion2))
@@ -346,8 +346,8 @@ for element in start:
     #print(essaie)
     proportion_maj[titre] = essaie[count]
     count += 1
-    with open("proportion/proportion des majuscules.json", "w") as w:
-        w.write(json.dumps(proportion_maj, indent=2))
+with open("proportion/proportion des majuscules.json", "w") as w:
+    w.write(json.dumps(proportion_maj, indent=2))
 
 
 # In[12]:
@@ -402,7 +402,7 @@ print("\end{table}")
 
 # # code pour regrouper les lieux de paris.
 
-# In[15]:
+# In[19]:
 
 
 
@@ -448,7 +448,7 @@ for cle, liste in dic_lieu.items():
 
 # # Code pour construction tableau overleaf
 
-# In[16]:
+# In[20]:
 
 
 
@@ -467,7 +467,7 @@ print("\end{table}")
 
 # # faire un dictionnaire d'interrogation permettant de lister toutes les chansons qui parle de paris par auteur
 
-# In[17]:
+# In[21]:
 
 
 
@@ -488,32 +488,36 @@ for element in start:
             liste_temporaire = []
             for ent in doc.ents:
                     if ent.label_ == "LOC":
-                        locatif = ent
-                        #print(locatif
+                        locatif = ent.text
+                        #print(locatif)
                         liste_temporaire.append(locatif)
             if locatif in dic_interro:
                 print("deja dans le dictionnaire") #problème le nom de l'artiste existe deja comment l'ajouter au dictionnaire ?
             else:
+                #print(type(liste_temporaire[0]))
                 dic_interro[artiste].append([titre, date, liste_temporaire])
                         
                     
         except:
             pass
+
 print(dic_interro)
 T = dic_interro.values()
 for artiste, T in dic_interro.items():
-    #print(artiste)
     #print(T)
     #nb_nom_paris = len([x for x in T if len x[2]==0])
     nb_total_chanson = len(T)
     print(nb_total_chanson)
+    
+with open("Data/Dictionnaire_artiste_to_lieux_paris.json", "w") as w:
+    w.write(json.dumps(dic_interro, indent=2))
 
 
 # # Créer un graph des artistes parlant du + "x".
 # x = un lieu de paris. 
 # somme globale. = pour un lieu qui est l'auteur qui a le plus parlé?
 
-# In[18]:
+# In[22]:
 
 
 #somme globale. = pour un lieu qui est l'auteur qui a le plus parlé?
@@ -546,9 +550,11 @@ for cle,valeur in dic_interro.items():
                 dico_en[z]+=1
     dico_des_artistes[cle]=dico_en
 dico_des_artistes
+with open("Data/Dictionnaire_des_artistes.json", "w") as w:
+    w.write(json.dumps(dico_des_artistes, indent=2))
 
 
-# In[20]:
+# In[23]:
 
 
 import re
@@ -577,9 +583,10 @@ def Chercherlieux(un_lieu_de_paris):
 Chercherlieux("Saint-Tropez")
 Chercherlieux("Mini-moke")
 Chercherlieux("Place de Clichy")
+Chercherlieux("Créteil")
 
 
-# In[ ]:
+# In[24]:
 
 
 print(tograph)
@@ -588,7 +595,7 @@ for cle, valeur in tograph.items():
     print(g)
 
 
-# In[21]:
+# In[25]:
 
 
 import matplotlib.pyplot as plt
@@ -605,7 +612,7 @@ for cle, valeur in tograph.items():
     plt.title(cle, color='r')
     plt.bar(x, height, width, color='green')
     
-    plt.savefig('images/%s.png'%cle)
+    plt.savefig('Data/%s.png'%cle)
     plt.show()
 
 
@@ -683,9 +690,10 @@ while len(ligne)>1:
 #
 
 
-# In[22]:
+# In[29]:
 
 
+import json
 #voc_glaff = []
 with open("freq_glaff_10000.json") as f:
     dic = json.load(f)
@@ -698,77 +706,74 @@ if mot in voc_glaff:
     print(mot)
 
 
+# In[ ]:
+
+
+
+
+
 # # Erreur il ne fait la boucle que sur le 1er élement de la liste (à cause du remove)
 
-# In[32]:
+# In[36]:
 
 
 import re
 import nltk
+#création d'une liste de ligne pour simuler la poésie.
 lignes_chanson = ["Je oui bonjour", 
                   "Fzefjkgnsd suis moi est mini", 
-                  "Mini-moke et mini-jupe",
-                  "Tout oui mal-honnete oui, bonjour"]
-#expr = re.compile("(\w+\S\w+|\w+)")
-#expr = re.compile("^(\w+'|\w+-\w+|\w+)")
-#match = expr.finditer(mot)
+                  "Mini-moke et mini-jupe", #"Mini-moke" ne sera pas mis en minuscule comme les autres lignes
+                  "Tout oui mal-honnete oui, bonjour",
+                  "Maxistère"]
+
+#------------------------------------------------------------------------------------------------------------
+#boucle qui parcours ma liste lignes_chanson
 for z in lignes_chanson:
-    print(type(z))
     expr = re.compile("^(\w+'|\w+-\w+|\w+)")
     match = expr.finditer(z)
+    #ici je créer une expression pour récuperer tous les mots en début de ligne, 
+    #certain commençant par "j'" ou "c'" d'autre par un tiret "un-mot", je ne sais pas s'il y a
+    #d'autre mot différent.
+#------------------------------------------------------------------------------------------------------------ 
     for m in match:
-        mot = m.group(0)
-        print(""" "{}"  dans : "{}" """.format(mot, z))
-        if mot.istitle():
+        mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
+        print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
+        toto = False
+        if mot[0] != mot[0].lower():
+            toto = True
+        #if mot.istitle(): #si le mot possède une majuscule je le met sans maj. minimoke not istitle()
+        if toto == True:
             mot = mot.lower()
-            if mot in voc_glaff:
-                print("le mot est dans glaff")
-                if mot in vrai_entite_nomme:
+            print(mot)
+#------------------------------------------------------------------------------------------------------------
+            if mot in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
+                print("le mot est dans glaff")   #a un lieu de ma liste des lieux
+                if mot in vrai_entite_nomme:     #SINON je l'affiche .
                     print("le mot est un nugget ")
                 else:
-                    print("je suis pas un nugget ")
-                    liste_mots = Splittxt2(z)
-                    liste_mots[0] = mot
-                    nouvelle_ligne = " ".join(liste_mots)
-                    #liste = ['Python', '5', 'py', '4', 'PHP', '8']
-                    # affichage de la liste
-                    #print("liste originale : " + str(liste))
-                    #remplacement
-                    #res = [elem.replace('4', '5') for elem in liste]
+                    print("je suis pas un nugget ") 
+                    liste_mots = Splittxt2(z)      #permet de découper ma ligne en liste de mot.
+                    liste_mots[0] = mot            #le mot en début de ligne je le remplace par mot.
+                    nouvelle_ligne = " ".join(liste_mots)  #je reassemble ma ligne.
                     print(lignes_chanson, "\n")
-                    res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
-                    lignes_chanson = res
-                    #lignes_chanson.remove(z)
-                    #lignes_chanson.append(res)
-                    #print(res, "\n")
-                    #lignes_chanson.append(nouvelle_ligne)
-                    #lignes_chanson.pop(0)
-                   
-                    #lignes_chanson.remove(z)
-                    #print(lignes_chanson, "\n")
+                    res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]  #je remplace 
+                    lignes_chanson = res               #l'ancienne ligne par une nouvelle ligne.                            
+#------------------------------------------------------------------------------------------------------------
 
-            if mot not in voc_glaff:
-                print("le mot est pas dans glaff")
+            if mot not in voc_glaff:            #s'il est pas dans le glaff je fait le même procédé ↑.
+                print("le mot est pas dans glaff") #ne pas mettre en minuscule.
                 liste_mots = Splittxt2(z)
                 liste_mots[0] = mot
                 nouvelle_ligne = " ".join(liste_mots)
-                #lignes_chanson.append(nouvelle_ligne)
-                #lignes_chanson.pop(0)
                 print(lignes_chanson, "\n")
-                
                 res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
                 lignes_chanson = res
-                #lignes_chanson.remove(z)
-                #lignes_chanson.append(res)
-                #print(res, "\n")
-                #lignes_chanson.remove(z)
-                #print(lignes_chanson, "\n")
-        #lignes_chanson.pop(0)
+
         
 print(lignes_chanson)
 
 
-# In[30]:
+# In[ ]:
 
 
 compteur = 0
@@ -829,7 +834,7 @@ for z in lignes_chanson:
 #print(lignes_chanson)
 
 
-# In[25]:
+# In[ ]:
 
 
 print(lignes_chanson)

@@ -22,7 +22,7 @@
 # 
 # La véritable "recréation" de phrases ce sera une étape pour plus tard, car ça va être assez compliqué !
 
-# In[1]:
+# In[3]:
 
 
 #ouverture et lecture des json
@@ -54,7 +54,7 @@ def Splittxt2(txt):
 
 # # création d'une liste des lieux de paris
 
-# In[2]:
+# In[4]:
 
 
 
@@ -73,10 +73,9 @@ for i in chemin:
 
 # # Récupération du glaff
 
-# In[4]:
+# In[24]:
 
 
-import json
 #voc_glaff = []
 with open("freq_glaff_10000.json") as f:
     dic = json.load(f)
@@ -84,14 +83,33 @@ with open("freq_glaff_10000.json") as f:
     voc_glaff = set(dic.keys()) 
     print(len(voc_glaff))
 
-mot = "météoriser"
-if mot in voc_glaff:
-    print(mot)
+#mot = "XXXXeeeew"
+mot = "Créteil"
+#mot = "Maxi"
+#mot = "Paris"
+if mot.lower() in voc_glaff:
+    print("dans glaff, on modifie")
+    if mot in vrai_entite_nomme:
+        print(mot, "FP")
+    else:
+        print(mot, "VP")
+else:
+    print("pas glaff, on modifie pas")
+    if mot not in vrai_entite_nomme:
+        print(mot, "FN")
+    else:
+        print(mot, "VN")
+
+
+# In[ ]:
+
+
+
 
 
 # # Execution du code sur une liste avant de l'executer sur le corpus
 
-# In[8]:
+# In[14]:
 
 
 import re
@@ -100,7 +118,10 @@ import nltk
 lignes_chanson = ["Je oui bonjour", 
                   "Fzefjkgnsd suis moi est mini", 
                   "Mini-moke et mini-jupe", #"Mini-moke" ne sera pas mis en minuscule comme les autres lignes
-                  "Tout oui mal-honnete oui, bonjour"]
+                  "Tout oui mal-honnete oui, bonjour",
+                  "Paris et sa fonctionne pas",
+                  "Créteil et sa fonctionne pas"
+                  "Maxistère"]
 
 #------------------------------------------------------------------------------------------------------------
 #boucle qui parcours ma liste lignes_chanson
@@ -114,34 +135,51 @@ for z in lignes_chanson:
     for m in match:
         mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
         print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
-        if mot.istitle(): #si le mot possède une majuscule je le met sans maj.
-            mot = mot.lower()
+        toto = False
+        if mot[0] != mot[0].lower():
+            toto = True
+        #if mot.istitle(): #si le mot possède une majuscule je le met sans maj. minimoke not istitle()
+        if toto == True:
+            mot_lower = mot.lower()
+            print(mot)
 #------------------------------------------------------------------------------------------------------------
-            if mot in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
+            if mot_lower in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
                 print("le mot est dans glaff")   #a un lieu de ma liste des lieux
                 if mot in vrai_entite_nomme:     #SINON je l'affiche .
-                    print("le mot est un nugget ")
+                    print("le mot est un nugget\n ")
                 else:
-                    print("je suis pas un nugget ") 
+                    print("je suis pas un nugget\n ")
                     liste_mots = Splittxt2(z)      #permet de découper ma ligne en liste de mot.
-                    liste_mots[0] = mot            #le mot en début de ligne je le remplace par mot.
+                    liste_mots[0] = mot_lower            #le mot en début de ligne je le remplace par mot.
                     nouvelle_ligne = " ".join(liste_mots)  #je reassemble ma ligne.
                     print(lignes_chanson, "\n")
                     res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]  #je remplace 
-                    lignes_chanson = res               #l'ancienne ligne par une nouvelle ligne.                            
+                    lignes_chanson = res               #l'ancienne ligne par une nouvelle ligne.  #VP                          
 #------------------------------------------------------------------------------------------------------------
 
-            if mot not in voc_glaff:            #s'il est pas dans le glaff je fait le même procédé ↑.
-                print("le mot est pas dans glaff")
-                liste_mots = Splittxt2(z)
-                liste_mots[0] = mot
-                nouvelle_ligne = " ".join(liste_mots)
-                print(lignes_chanson, "\n")
-                res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
-                lignes_chanson = res
+            if mot_lower not in voc_glaff:            #s'il est pas dans le glaff je fait le même procédé ↑.
+                print("le mot est pas dans glaff \n ")#ne pas mettre en minuscule. #FN
+                #match = [i for i in vrai_entite_nomme]
+                #print(match)
+                if mot in vrai_entite_nomme:
+                    ("je suis un lieu de paris \n ")
+                else:
+                    ("pas dans lieu de paris")
+                #liste_mots = Splittxt2(z)
+                #liste_mots[0] = mot
+                #nouvelle_ligne = " ".join(liste_mots)
+                #print(lignes_chanson, "\n")
+                #res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
+                #lignes_chanson = res
 
         
 print(lignes_chanson)
+
+
+# In[10]:
+
+
+
 
 
 # # On observe que le traitement fonctionne partout sauf pour Mini-moke
