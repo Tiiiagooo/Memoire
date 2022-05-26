@@ -4,8 +4,8 @@
 # In[1]:
 
 
-#load le modèle large
-#!python -m spacy download fr_core_news_lg
+#load le modèle medium
+#!python -m spacy download fr_core_news_md
 
 
 # # Ouverture et lecture des json
@@ -65,7 +65,7 @@ print(tous_les_txt)
 
 # # Création d'une liste lieux de paris 
 
-# In[18]:
+# In[4]:
 
 
 #création d'une liste des lieux de paris
@@ -87,15 +87,23 @@ for i in chemin:
 # In[5]:
 
 
+#!python −m spacy download fr_core_news_sm
+#!python −m spacy download fr_core_news_md
+#!python −m spacy download fr_core_news_lg
+
+
+# In[5]:
+
+
 #affichage des EN trouvé par spacy
 import nltk
 from nltk.tokenize import word_tokenize
 import re
 import spacy
 
-nlp = spacy.load('fr_core_news_sm') #modèle small
-#nlp = spacy.load('') #modèle medium
-#nlp = spacy.load('fr_core_web_lg') #modèle large
+#nlp = spacy.load('fr_core_news_sm') #modèle small
+#nlp = spacy.load('fr_core_news_md') #modèle medium
+nlp = spacy.load('fr_core_news_lg') #modèle large
 compteur = 0
 tokenizer = nltk.RegexpTokenizer(r"(\w+,\w+|\w+-\w+|\w+\.\w+\.\w+|\w+\S|\w+|\S|\w+\S|\?|\!)") #Pour les mots du texte javai pour le 1er
                                                                                               #600 résultats
@@ -124,7 +132,7 @@ for txt in tous_les_txt :
                 if ent.label_ == "LOC":
                     locatif = ent.text
                     entite_nomme.append(locatif)
-            print("\n Le texte a trouvé {} Entité Nommé, les locatifs sont: ".format(len(entite_nomme)))
+            print("\n Le texte a trouvé {} Entité Nommé locatif, ce sont: ".format(len(entite_nomme)))
             print(set(entite_nomme))
             EN.append(entite_nomme)
             print(EN)
@@ -168,11 +176,13 @@ Proportion = []
 
 
 
-if os.path.exists("proportion/proportion Entite nomme spacy2.json"):
-    with open(path_json, encoding='UTF-8') as f:
+if os.path.exists("proportion/proportion Entite nomme spacy_large.json"):
+    with open("proportion/proportion Entite nomme spacy_large.json", encoding='UTF-8') as f:
         a = json.load(f)
-        for i in a:
-            Proportion.append(i[1]) #reprend uniquement mon premier fichier json
+        #print(a)
+        for c, v in a.items():
+            Proportion.append(v)
+            #Proportion.append(i[1]) #reprend uniquement mon premier fichier json
 else:
     for txt in tous_les_txt :
         for l in txt :
@@ -182,8 +192,10 @@ else:
                 entite_nomme = []
                 split_txt = tokenizer.tokenize(l) 
                 for ent in doc.ents:
+                    if ent.label_ == "LOC":
+                        locatif = ent.text
                     #print(ent.text, ent.label_)
-                    entite_nomme.append(ent.text)
+                        entite_nomme.append(locatif)
                     proportion = len(entite_nomme)/len(split_txt)
       
                 Proportion.append(proportion*100)
@@ -195,7 +207,8 @@ else:
                 Proportion.append(0)
                 print("La proportion des EN sur la taille du texte {} est de 0%".format(compteur))
                 compteur += 1
-                    
+   
+
 print(len(Proportion))
 count = 0
 for element in start:
@@ -204,11 +217,12 @@ for element in start:
     #print(essaie)
     proportion_EN_spacy[titre] = essaie[count]
     count += 1
-with open("proportion/proportion Entite nomme spacy.json", "w") as w:
+#print(proportion_EN_spacy)
+with open("proportion/proportion Entite nomme spacy_large.json", "w") as w:
     w.write(json.dumps(proportion_EN_spacy, indent=2))
 
 
-# In[8]:
+# In[9]:
 
 
 print(json.dumps(proportion_EN_spacy, indent=2))
@@ -222,7 +236,13 @@ print(json.dumps(proportion_EN_spacy, indent=2))
 
 # # Calcul des proportions des EN qui ont match avec les fichiers des lieux de paris
 
-# In[9]:
+# In[ ]:
+
+
+
+
+
+# In[10]:
 
 
 #Calcul de la proportion des EN qui ont matché avec la liste des lieux de paris
@@ -238,42 +258,51 @@ Proportion2 = []
 en_Match = {}
 
 liste_titre = []
-for element in start:
-    txt = element["lyrics"]
-    #print(element.keys())
-    titre = element["full_title"]
-    print(titre)
-    try:
-        artiste = element["album"]["artist"]["name"]
-    except:
-        pass
-    date = element["release_date"]
-    en_Match.setdefault(titre,[])    
-    if 2>1 :
-        try:
-            doc = nlp(txt)
-            liste_temporaire = []
-            freq = []
-            for ent in doc.ents:
-                liste_temporaire.append(ent.text)
+if os.path.exists("proportion/proportion Entite matché_large.json"):
+    with open("proportion/proportion Entite matché_large.json", encoding='UTF-8') as f:
+        a = json.load(f)
+        for i, c in a.items():
+            Proportion2.append(c[1])
+            en_Match[i]= [c[0], c[1], c[2]] #reprend uniquement mon premier fichier json
             
-            match =  [i for i in liste_temporaire if i in vrai_entite_nomme]#Pour chaque match on calcul la proportion par texte.
-            proportion = len(match)/len(split_txt)
-            print(proportion, "\n")
-            if match :
-                freq.append(match)   
-                en_Match[titre]= [match, proportion, len(freq)]
-            else:
+else:
+    for element in start:
+        txt = element["lyrics"]
+        #print(element.keys())
+        titre = element["full_title"]
+        print(titre)
+        try:
+            artiste = element["album"]["artist"]["name"]
+        except:
+            pass
+        date = element["release_date"]
+        en_Match.setdefault(titre,[])    
+        if 2>1 :
+            try:
+                doc = nlp(txt)
+                liste_temporaire = []
+                freq = []
+                for ent in doc.ents:
+                    liste_temporaire.append(ent.text)
+
+                match =  [i for i in liste_temporaire if i in vrai_entite_nomme]#Pour chaque match on calcul la proportion par texte.
+                proportion = len(match)/len(split_txt)
+                print(proportion, "\n")
+                if match :
+                    freq.append(match)   
+                    en_Match[titre]= [match, proportion, len(freq)]
+                else:
+                    en_Match[titre] = ["no match", 0, "none"]
+
+                Proportion2.append(proportion)
+
+            except:
+                Proportion2.append(0)
+                print("0\n")
                 en_Match[titre] = ["no match", 0, "none"]
 
-            Proportion2.append(proportion)
-            
-        except:
-            Proportion2.append(0)
-            print("0\n")
-            en_Match[titre] = ["no match", 0, "none"]
-            
-with open("proportion/proportion Entite matché.json", "w") as w:
+
+with open("proportion/proportion Entite matché_large.json", "w") as w:
     w.write(json.dumps(en_Match, indent=2))       
             
             
@@ -284,7 +313,7 @@ print(len(Proportion2))
         
 
 
-# In[10]:
+# In[11]:
 
 
 print(json.dumps(en_Match, indent=2))
@@ -292,7 +321,7 @@ print(json.dumps(en_Match, indent=2))
 
 # # Proportion des lettres capitale dans les textes
 
-# In[11]:
+# In[12]:
 
 
 
@@ -350,7 +379,7 @@ with open("proportion/proportion des majuscules.json", "w") as w:
     w.write(json.dumps(proportion_maj, indent=2))
 
 
-# In[12]:
+# In[13]:
 
 
 print(json.dumps(proportion_maj, indent=2))
@@ -358,7 +387,7 @@ print(json.dumps(proportion_maj, indent=2))
 
 # # initialisation d'un dic pr overleaf
 
-# In[13]:
+# In[14]:
 
 
 
@@ -381,12 +410,13 @@ print(dictionnaire_tableau)
 # # affichage pr overleaf
 # 
 
-# In[14]:
+# In[15]:
 
 
 
 nom_colone = ["Titre chanson", "Proportion EN spacy", "Proportion EN matché", "Proportion Majuscule"]
 print("\\begin{table}")
+print("\\centering")
 print("\t\\begin{tabular}{|l|l|l|l|}")
 print("\t\\hline")
 print(" \t %s \\\\" %(" & ".join(nom_colone)))
@@ -394,7 +424,7 @@ print("\t\\hline")
 #ne pas trier les valeurs tant que toutes les valeurs ne sont pas inscrite.
 #ou une boucle qui récupère pour chaque titre leurs valeurs.
 for titre, proportion in sorted(dictionnaire_tableau.items(), key=lambda x: x[1], reverse=True):
-    ligne = "\t %s... \t& %s \t& %s \t& %s \\\\\n\t\\hline  " %(str(titre[:20]), round(proportion[0], 2), round(proportion[1], 2), round(proportion[2], 2))
+    ligne = "\t %s... \t& %s \t& %s \t& %s \\\\\n\t\\hline  " %(str(titre[:20]), round(proportion[0], 4), round(proportion[1], 4), round(proportion[2], 4))
     print(ligne)
 print("\t\end{tabular}")
 print("\end{table}")
@@ -402,7 +432,7 @@ print("\end{table}")
 
 # # code pour regrouper les lieux de paris.
 
-# In[19]:
+# In[16]:
 
 
 
@@ -448,7 +478,7 @@ for cle, liste in dic_lieu.items():
 
 # # Code pour construction tableau overleaf
 
-# In[20]:
+# In[17]:
 
 
 
@@ -465,41 +495,64 @@ print("\t\end{tabular}")
 print("\end{table}") 
 
 
+# # Pour chaque lieux calculer sa fréquence dans le corpus
+
+# In[ ]:
+
+
+
+
+
 # # faire un dictionnaire d'interrogation permettant de lister toutes les chansons qui parle de paris par auteur
 
-# In[21]:
+# In[ ]:
+
+
+
+
+
+# In[18]:
 
 
 
 dic_interro = {}
-for element in start:
-    txt = element["lyrics"]
-    #print(element.keys())
-    titre = element["full_title"]
-    try:
-        artiste = element["album"]["artist"]["name"]
-    except:
-        continue
-    date = element["release_date"]
-    dic_interro.setdefault(artiste, [])
-    if 2>1 :
+
+if os.path.exists("Data/Dictionnaire_artiste_to_lieux_paris_large.json"):
+    with open("Data/Dictionnaire_artiste_to_lieux_paris_large.json", encoding="UTF-8") as f:
+        a = json.load(f)
+        for i, c in a.items():
+            #print(c[0])
+            dic_interro[i] = c
+        
+else:
+    for element in start:
+        txt = element["lyrics"]
+        #print(element.keys())
+        titre = element["full_title"]
         try:
-            doc = nlp(txt)
-            liste_temporaire = []
-            for ent in doc.ents:
-                    if ent.label_ == "LOC":
-                        locatif = ent.text
-                        #print(locatif)
-                        liste_temporaire.append(locatif)
-            if locatif in dic_interro:
-                print("deja dans le dictionnaire") #problème le nom de l'artiste existe deja comment l'ajouter au dictionnaire ?
-            else:
-                #print(type(liste_temporaire[0]))
-                dic_interro[artiste].append([titre, date, liste_temporaire])
-                        
-                    
+            artiste = element["album"]["artist"]["name"]
         except:
-            pass
+            continue
+        date = element["release_date"]
+        dic_interro.setdefault(artiste, [])
+        if 2>1 :
+            try:
+                doc = nlp(txt)
+                liste_temporaire = []
+                for ent in doc.ents:
+                        if ent.label_ == "LOC":
+                            locatif = ent.text
+                            #print(locatif)
+                            liste_temporaire.append(locatif)
+                if locatif in dic_interro:
+                    print("deja dans le dictionnaire") #problème le nom de l'artiste existe deja comment l'ajouter au dictionnaire ?
+                else:
+                    #print(type(liste_temporaire[0]))
+                    dic_interro[artiste].append([titre, date, liste_temporaire])
+
+
+            except:
+                pass
 
 print(dic_interro)
 T = dic_interro.values()
@@ -509,7 +562,7 @@ for artiste, T in dic_interro.items():
     nb_total_chanson = len(T)
     print(nb_total_chanson)
     
-with open("Data/Dictionnaire_artiste_to_lieux_paris.json", "w") as w:
+with open("Data/Dictionnaire_artiste_to_lieux_paris_large.json", "w") as w:
     w.write(json.dumps(dic_interro, indent=2))
 
 
@@ -517,7 +570,7 @@ with open("Data/Dictionnaire_artiste_to_lieux_paris.json", "w") as w:
 # x = un lieu de paris. 
 # somme globale. = pour un lieu qui est l'auteur qui a le plus parlé?
 
-# In[22]:
+# In[19]:
 
 
 #somme globale. = pour un lieu qui est l'auteur qui a le plus parlé?
@@ -536,7 +589,12 @@ dico_des_artistes['k'] = {}
 dico_des_artistes['k']['Mini-moke'] = 2
 dico_des_artistes['k']['Place de Clichy'] = 5
 
-
+if os.path.exists("Data/Dictionnaire_des_artistes_large.json"):
+    with open("Data/Dictionnaire_des_artistes_large.json", encoding="UTF-8") as f:
+        a = json.load(f)
+        for i, c in a.items():
+            #print(c[0])
+            dico_des_artistes[i] = c
 for cle,valeur in dic_interro.items():
     dico_en = {}
     for i in range(len(valeur)):
@@ -550,11 +608,17 @@ for cle,valeur in dic_interro.items():
                 dico_en[z]+=1
     dico_des_artistes[cle]=dico_en
 dico_des_artistes
-with open("Data/Dictionnaire_des_artistes.json", "w") as w:
+with open("Data/Dictionnaire_des_artistes_large.json", "w") as w:
     w.write(json.dumps(dico_des_artistes, indent=2))
 
 
-# In[23]:
+# In[20]:
+
+
+print(json.dumps(dico_des_artistes, indent=2))
+
+
+# In[21]:
 
 
 import re
@@ -580,13 +644,14 @@ def Chercherlieux(un_lieu_de_paris):
                 tograph[l][cle] = v
     return tograph[l]
 
-Chercherlieux("Saint-Tropez")
+
 Chercherlieux("Mini-moke")
 Chercherlieux("Place de Clichy")
 Chercherlieux("Créteil")
+Chercherlieux("Saint-Tropez")
 
 
-# In[24]:
+# In[22]:
 
 
 print(tograph)
@@ -595,7 +660,7 @@ for cle, valeur in tograph.items():
     print(g)
 
 
-# In[25]:
+# In[23]:
 
 
 import matplotlib.pyplot as plt
@@ -612,11 +677,11 @@ for cle, valeur in tograph.items():
     plt.title(cle, color='r')
     plt.bar(x, height, width, color='green')
     
-    plt.savefig('Data/%s.png'%cle)
+    plt.savefig('Data/image_large/%s.png'%cle)
     plt.show()
 
 
-# In[ ]:
+# In[24]:
 
 
 #pour le pourcentage des lieux de paris.
@@ -624,16 +689,22 @@ for cle, valeur in tograph.items():
 #somme globale. = pour un lieu qui est l'auteur qui a le plus parlé?
 
 
+# In[25]:
+
+
+#pour le lieu x  dans quel chanson apparait-il ?
+
+
 # In[ ]:
+
+
+
+
+
+# In[26]:
 
 
 #sur quelque texte faire une sortie ou chaque token du txt et l'étiquette donner par spacy 
-
-
-# In[ ]:
-
-
-#BIO, detecter les personnes 
 
 
 # # pré-traitement adaptation casse
@@ -657,7 +728,7 @@ for cle, valeur in tograph.items():
 # 
 # La véritable "recréation" de phrases ce sera une étape pour plus tard, car ça va être assez compliqué !
 
-# In[ ]:
+# In[27]:
 
 
 """import re
@@ -683,14 +754,14 @@ while len(ligne)>1:
 #w.close()
 
 
-# In[ ]:
+# In[28]:
 
 
 #stat sur date, lieu le plus fréquent, 
 #
 
 
-# In[29]:
+# In[9]:
 
 
 import json
@@ -706,150 +777,217 @@ if mot in voc_glaff:
     print(mot)
 
 
-# In[ ]:
+# In[42]:
 
 
+print(tous_les_txt)
 
 
-
-# # Erreur il ne fait la boucle que sur le 1er élement de la liste (à cause du remove)
-
-# In[36]:
+# In[59]:
 
 
-import re
 import nltk
-#création d'une liste de ligne pour simuler la poésie.
-lignes_chanson = ["Je oui bonjour", 
-                  "Fzefjkgnsd suis moi est mini", 
-                  "Mini-moke et mini-jupe", #"Mini-moke" ne sera pas mis en minuscule comme les autres lignes
-                  "Tout oui mal-honnete oui, bonjour",
-                  "Maxistère"]
-
-#------------------------------------------------------------------------------------------------------------
-#boucle qui parcours ma liste lignes_chanson
-for z in lignes_chanson:
-    expr = re.compile("^(\w+'|\w+-\w+|\w+)")
-    match = expr.finditer(z)
-    #ici je créer une expression pour récuperer tous les mots en début de ligne, 
-    #certain commençant par "j'" ou "c'" d'autre par un tiret "un-mot", je ne sais pas s'il y a
-    #d'autre mot différent.
-#------------------------------------------------------------------------------------------------------------ 
-    for m in match:
-        mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
-        print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
-        toto = False
-        if mot[0] != mot[0].lower():
-            toto = True
-        #if mot.istitle(): #si le mot possède une majuscule je le met sans maj. minimoke not istitle()
-        if toto == True:
-            mot = mot.lower()
-            print(mot)
-#------------------------------------------------------------------------------------------------------------
-            if mot in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
-                print("le mot est dans glaff")   #a un lieu de ma liste des lieux
-                if mot in vrai_entite_nomme:     #SINON je l'affiche .
-                    print("le mot est un nugget ")
-                else:
-                    print("je suis pas un nugget ") 
-                    liste_mots = Splittxt2(z)      #permet de découper ma ligne en liste de mot.
-                    liste_mots[0] = mot            #le mot en début de ligne je le remplace par mot.
-                    nouvelle_ligne = " ".join(liste_mots)  #je reassemble ma ligne.
-                    print(lignes_chanson, "\n")
-                    res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]  #je remplace 
-                    lignes_chanson = res               #l'ancienne ligne par une nouvelle ligne.                            
-#------------------------------------------------------------------------------------------------------------
-
-            if mot not in voc_glaff:            #s'il est pas dans le glaff je fait le même procédé ↑.
-                print("le mot est pas dans glaff") #ne pas mettre en minuscule.
-                liste_mots = Splittxt2(z)
-                liste_mots[0] = mot
-                nouvelle_ligne = " ".join(liste_mots)
-                print(lignes_chanson, "\n")
-                res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
-                lignes_chanson = res
-
-        
-print(lignes_chanson)
-
-
-# In[ ]:
-
-
-compteur = 0
-lignes_chanson = []
+chanson = []
 for element in start:
+    liste = []
     txt = element["lyrics"]
-    #print(element.keys())
-    titre = element["full_title"]
-    try:
-        artiste = element["album"]["artist"]["name"]
-    except:
-        continue
-    date = element["release_date"]
     try:
         for l in txt.split("\n"):
-            lignes_chanson.append(l)
-
+            #lignes_chanson.append(l)
+            liste.append(l)
+        chanson.append(liste) #lignes_chanson.append([l])
     except:
-        pass
-    
-    
-    
-for z in lignes_chanson:
-    expr = re.compile("^(\w+'|\w+-\w+|\w+)")
-    match = expr.finditer(z)
-    for m in match:
-        mot = m.group(0)
-        #print(""" "{}"  dans : "{}" """.format(mot, z))
-        if mot.istitle():
-            mot = mot.lower()
-            if mot in voc_glaff:
-                #print("le mot est dans glaff")
-                if mot in vrai_entite_nomme:
-                    print("le mot {} est un nugget ".format(mot))
-                else:
-                    #print("je suis pas un nugget ")
-                    liste_mots = Splittxt2(z)
-                    liste_mots[0] = mot
-                    nouvelle_ligne = " ".join(liste_mots)
-
-                    #print(lignes_chanson, "\n")
-                    res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
-                    lignes_chanson = res
-
-
-            else:
-                #print("le mot est pas dans glaff")
-                liste_mots = Splittxt2(z)
-                liste_mots[0] = mot
-                nouvelle_ligne = " ".join(liste_mots)
-                #lignes_chanson.append(nouvelle_ligne)
-                #lignes_chanson.pop(0)
-                #print(lignes_chanson, "\n")
-                
-                res = [elem.replace(z,nouvelle_ligne) for elem in lignes_chanson]
-                lignes_chanson = res
+        chanson.append(["None"])
         
-#print(lignes_chanson)
+print(len(chanson))
+FP = 0 # On a modifié et on a eu tord
+VP = 0 # On a modifié et on a eu raison
+FN = 0 # On a pas modifié et on a eu tord
+VN = 0 # On a pas modifié et on a eu raison.
+
+#print(chanson)
+count = -1
+for liste_lignes_chanson in chanson:
+    count += 1
+    for ligne in liste_lignes_chanson:
+        #print(ligne)
+        expr = re.compile("^(\w+'|\w+-\w+|\w+)")
+        match = expr.finditer(ligne)
+        #ici je créer une expression pour récuperer tous les mots en début de ligne, 
+        #certain commençant par "j'" ou "c'" d'autre par un tiret "un-mot", je ne sais pas s'il y a
+        #d'autre mot différent.
+    #------------------------------------------------------------------------------------------------------------ 
+        for m in match:
+            mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
+            #print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
+            toto = False
+            if mot[0] != mot[0].lower():
+                toto = True
+            #if mot.istitle(): #si le mot possède une majuscule je le met sans maj. minimoke not istitle()
+            if toto == True:
+                mot_lower = mot.lower()
+                #print(mot)
+    #------------------------------------------------------------------------------------------------------------
+                if mot_lower in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
+                    #print("le mot est dans glaff")   #a un lieu de ma liste des lieux
+                    if mot in vrai_entite_nomme:     #SINON je l'affiche .
+                        print("le mot est un nugget\n ")
+                        FP += 1
+                    else:
+                        #print("je suis pas un nugget\n ")
+                        liste_mots = Splittxt2(ligne)      #permet de découper ma ligne en liste de mot.
+                        liste_mots[0] = mot_lower            #le mot en début de ligne je le remplace par mot.
+                        nouvelle_ligne = " ".join(liste_mots)  #je reassemble ma ligne.
+                        nouvelle_ligne = re.sub("\'\s", "\'", nouvelle_ligne)
+                        #print(lignes_chanson, "\n")
+                        res = [elem.replace(ligne,nouvelle_ligne) for elem in liste_lignes_chanson]  #je remplace 
+                        VP += 1
+                        liste_lignes_chanson = res   #l'ancienne ligne par une nouvelle ligne.  #VP 
+                        chanson[count] = liste_lignes_chanson
+                    
+
+                        
+    #------------------------------------------------------------------------------------------------------------
+
+                elif mot_lower not in voc_glaff:#s'il est pas dans le glaff je fait le même procédé ↑.
+
+                    #print("le mot est pas dans glaff \n ")#ne pas mettre en minuscule. #FN
+                    #match = [i for i in vrai_entite_nomme]
+                    if mot not in vrai_entite_nomme:
+                        #print("pas dans lieu de paris")
+                        FN += 1
+                    else:
+                        #print("je suis un lieu de paris \n ")
+                        VN += 1
+
+#print(chanson)
+#print(count)
+print(len(chanson))
+
+
+# In[334]:
+
+
+comptage = 0
+
+num_chanson = []
+
+for i in chanson:
+    m = []
+    nv_echantillon = "\n".join(i)
+    m.append(nv_echantillon)
+    #print(m)
+    #num_chanson.append(nv_echantillon)
+    num_chanson.append(m)
+    #print(num_chanson[comptage])
+        
+    #print(num_chanson[comptage], "\n")
+        
+        
+#print(num_chanson[0])    
+Dic_nouvelle_chansons = {}
+Dic_nouvelle_chansons["all"] = {}
+#Dic_nouvelle_chansons["all"].setdefault(,[])
+
+#Dic_nouvelle_chansons["all"]["Titre_chanson"] = {}
+#Dic_nouvelle_chansons["all"]["Auteur"]
+#Dic_nouvelle_chansons["all"]["lyrics"] = {}
+
+#Dic_nouvelle_chansons["Titre_chanson"] = {}
+#Dic_nouvelle_chansons["lyrics"] = {}
+for elem in start:
+    #Dic_nouvelle_chansons.setdefault()
+    
+    titre = elem["full_title"]
+    try:
+        artiste = elem["album"]["artist"]["name"]
+    except:
+        artiste = "none"
+    if titre not in Dic_nouvelle_chansons:
+        Dic_nouvelle_chansons["all"]["Titre_chanson"] = titre
+        print(Dic_nouvelle_chansons)
+        Dic_nouvelle_chansons["all"]["Auteur"] = artiste
+        Dic_nouvelle_chansons["all"]["lyrics"] = num_chanson[comptage]
+        comptage += 1
+
+#with open("Data/nouvel_echantillon.json", "w") as w:
+    #w.write(json.dumps(Dic_nouvelle_chansons, indent=2))
+print(Dic_nouvelle_chansons)
 
 
 # In[ ]:
 
 
-print(lignes_chanson)
+
+
+
+# In[297]:
+
+
+dicoooooooo = {}
+count = 0 
+for elem in start:
+    titre = elem["full_title"]
+    dicoooooooo[titre] = {}
+    dicoooooooo[titre]["lyrics"] =  {}
+    dicoooooooo[titre]["lyrics"] = num_chanson[count]
+    count += 1
+    
+print(dicoooooooo)
+
+
+# In[212]:
+
+
+print("FP = ",FP)
+print("VP = ",VP)
+print("FN = ",FN)
+print("VN = ",VN)
+
+
+# In[213]:
+
+
+accuracy = VP/(VP + FP)
+rappel = VP / (VP + FN)
+f_mesure = (2*(accuracy*rappel))/(accuracy+rappel)
+print("accuracy = ",accuracy)
+print("rappel = ",rappel)
+print("f_mesure = ",f_mesure)
+
+
+# # Récuperer mon nouveau fichier json et detecter les EN dessus.
+# for i in chanson:
+#     #print(i)
+#     nv_echantillon = "\n".join(i)
+#     #print(nv_echantillon)
+#     doc = nlp(nv_echantillon)
+#     for ent in doc.ents:
+#         if ent.label_ == "LOC":
+#             locatif = ent.text
+#             print(locatif)
+#             if locatif in vrai_entite_nomme:
+#                 print("#"*79, "\n", locatif,"\n","#"*79)
+
+# In[228]:
+
+
+path_to_Spacy = "Data/nouvel_echantillon.json"
+
+i = ouvrir_json(path_to_Spacy)
+#print(i)
+debut = i["Titre_chanson"]
+print(debut)
+
+for lk in debut:
+    parole = lk["lyrics"]
+    print(parole)
 
 
 # In[ ]:
 
 
 
-
-
-# In[ ]:
-
-
-help(list)
 
 
 # In[ ]:
