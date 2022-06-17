@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # pour le lieu x  dans quel chanson apparait-il ?
-
-# In[4]:
+# In[1]:
 
 
 #ouverture et lecture des json
+import nltk
+import spacy
 import json
+import os
 def ouvrir_json(chemin):
-    f = open(chemin, encoding="utf-8")
+    f = open(chemin, encoding="UTF-8")
     toto = json.load(f)
     f.close()
     return toto
@@ -24,42 +25,22 @@ def lire_fichier(chemin):
   f.close()
   return chaine
 def Splittxt(txt):
-    tokenizer = nltk.RegexpTokenizer(r"(\w+,\w+|\w+-\w+|\w+\.\w+\.\w+|\w+\S|\w+|\S|\w+\S|\?|\!)")
+    tokenizer = nltk.RegexpTokenizer(r"(\w+-\w+|\w+\S|(\w\.)*\w.|\w+|\S|\w+\S|\?|\!)")
+    txt_split = tokenizer.tokenize(txt)
+    return 
+def Splittxt4(txt):
+    tokenizer = nltk.RegexpTokenizer(r"(\w+-\w+|\w+\S|((\w\.)*\w.)|\w+|\S|\w+\S|\?|\!)")
+    txt_split = tokenizer.tokenize(txt)
+    return 
+def Splittxt3(txt):
+    tokenizer = nltk.RegexpTokenizer(r"(\w[\w\.]{1,}|\w+-\w+|\w+\S|\w+|\S|\w+\S|\?|\!)")
     txt_split = tokenizer.tokenize(txt)
     return txt_split
 def Splittxt2(txt):
-    tokenizer = nltk.RegexpTokenizer(r"(\w+'|\w+\S\w+|\w+-\w+|\w+|\S|\w+\S)")
+    tokenizer = nltk.RegexpTokenizer(r"(\w+'|\w+-\w+|\w+|\S|\w+\S)")
     txt_split = tokenizer.tokenize(txt)
     return txt_split
-
-
-# In[7]:
-
-
-#pour afficher paroles des chansons du fichier echantillon1.json
-
-import json
-i = ouvrir_json("echantillon1.json")
-start = i["_all/"]
-#j'ai créer une liste vide pour regrouper tous les listes de txt (chaque txt et dans une liste)
-tous_les_txt = []
-for element in start:
-    liste_txt = []
-    txt = element["lyrics"]
-    titre = element["full_title"]
-    liste_txt.append(txt)
-    tous_les_txt.append(liste_txt)
-    print(titre)
-    print(liste_txt, "-"*70)
-print(tous_les_txt)
-
-
-# # création d'une liste des lieux de paris
-
-# In[2]:
-
-
-
+#création d'une liste des lieux de paris
 import glob
 import re
 
@@ -73,170 +54,195 @@ for i in chemin:
         vrai_entite_nomme.append(lieu)
 
 
-# In[9]:
+# In[42]:
 
 
 import json
-#voc_glaff = []
-with open("freq_glaff_10000.json") as f:
-    dic = json.load(f)
-    print(len(dic))
-    voc_glaff = set(dic.keys()) 
-    print(len(voc_glaff))
-
-mot = "météoriser"
-if mot in voc_glaff:
-    print(mot)
+import tqdm
+corpus = ouvrir_json("tmp.json")
 
 
-# In[10]:
+dic_longueur_chanson = {}
+
+for nom_artiste, donnee in tqdm.tqdm(corpus.items()):
+    #dic_longueur_chanson = {nom_artiste:{}}
+    dic_longueur_chanson.setdefault(nom_artiste, {})
+    for element in donnee:
+        #chansons = []
+        try:
+            #txt = str(parole)
+            parole = element["lyrics"]
+            txt = Splittxt3(parole)
+            longueur = len(txt)
+            
+            #nbre_de_texte_traitable += 1
+        except:
+            longueur = 0
+        titre = element["full_title"]
+        #print(nom_artiste, titre, len(txt))
+        dic_longueur_chanson[nom_artiste].setdefault(titre, [])
+        dic_longueur_chanson[nom_artiste][titre].append(longueur)
+
+with open("Data/Dictionnaire_longueur_chansons.json", "w") as w: 
+        w.write(json.dumps(dic_longueur_chanson, indent=2))
 
 
-import nltk
-chanson = []
-for element in start:
-    liste = []
-    txt = element["lyrics"]
-    try:
-        for l in txt.split("\n"):
-            #lignes_chanson.append(l)
-            liste.append(l)
-        chanson.append(liste) #lignes_chanson.append([l])
-    except:
-        chanson.append(["None"])
+
+# In[77]:
+
+
+longueur_for_graph = {}
+for nom_artiste, dic in dic_longueur_chanson.items():
+    longueur_for_graph[nom_artiste] = {}
+    for titre, longueur_titre in sorted(dic.items(), key=lambda x: x[1], reverse=False):
+        longueur_for_graph[nom_artiste][titre] = longueur_titre
+
+
+# In[85]:
+
+
+import matplotlib.pyplot as pyplot
+#print(dic_longueur_chanson.keys())
+for nom_artiste, dic in dic_longueur_chanson.items():
+    if nom_artiste == "_113":
+        liste_vide = []
         
-print(len(chanson))
-FP = 0 # On a modifié et on a eu tord
-VP = 0 # On a modifié et on a eu raison
-FN = 0 # On a pas modifié et on a eu tord
-VN = 0 # On a pas modifié et on a eu raison.
+        #for titre, longueur_chanson in dic.items():
+            liste_vide.append(dic[1][i])
+            
+            #for chiffre in longueur_chanson:
+                #liste_vide.append(chiffre)
+        fig, ax1 = pyplot.subplots()
+        ax1.set_ylabel("Nombre de mots")
+        ax1.plot(liste_vide, 'b-')
 
-#print(chanson)
-count = -1
-for liste_lignes_chanson in chanson:
-    count += 1
-    for ligne in liste_lignes_chanson:
-        #print(ligne)
-        expr = re.compile("^(\w+'|\w+-\w+|\w+)")
-        match = expr.finditer(ligne)
-        #ici je créer une expression pour récuperer tous les mots en début de ligne, 
-        #certain commençant par "j'" ou "c'" d'autre par un tiret "un-mot", je ne sais pas s'il y a
-        #d'autre mot différent.
-    #------------------------------------------------------------------------------------------------------------ 
-        for m in match:
-            mot = m.group(0) #la variable mot prend la chaine de caractère trouvé par mon match.
-            #print(""" "{}"  dans : "{}" """.format(mot, z)) #affiche le mot dans quel ligne il se trouve.
-            toto = False
-            if mot[0] != mot[0].lower():
-                toto = True
-            #if mot.istitle(): #si le mot possède une majuscule je le met sans maj. minimoke not istitle()
-            if toto == True:
-                mot_lower = mot.lower()
-                #print(mot)
-    #------------------------------------------------------------------------------------------------------------
-                if mot_lower in voc_glaff:                 #s'il est dans le glaff et qu'il correspond 
-                    #print("le mot est dans glaff")   #a un lieu de ma liste des lieux
-                    if mot in vrai_entite_nomme:     #SINON je l'affiche .
-                        print("le mot est un nugget\n ")
-                        FP += 1
-                    else:
-                        #print("je suis pas un nugget\n ")
-                        liste_mots = Splittxt2(ligne)      #permet de découper ma ligne en liste de mot.
-                        liste_mots[0] = mot_lower            #le mot en début de ligne je le remplace par mot.
-                        nouvelle_ligne = " ".join(liste_mots)  #je reassemble ma ligne.
-                        nouvelle_ligne = re.sub("\'\s", "\'", nouvelle_ligne)
-                        #print(lignes_chanson, "\n")
-                        res = [elem.replace(ligne,nouvelle_ligne) for elem in liste_lignes_chanson]  #je remplace 
-                        VP += 1
-                        liste_lignes_chanson = res   #l'ancienne ligne par une nouvelle ligne.  #VP 
-                        chanson[count] = liste_lignes_chanson
-                    
-
-                        
-    #------------------------------------------------------------------------------------------------------------
-
-                elif mot_lower not in voc_glaff:#s'il est pas dans le glaff je fait le même procédé ↑.
-
-                    #print("le mot est pas dans glaff \n ")#ne pas mettre en minuscule. #FN
-                    #match = [i for i in vrai_entite_nomme]
-                    if mot not in vrai_entite_nomme:
-                        #print("pas dans lieu de paris")
-                        FN += 1
-                    else:
-                        #print("je suis un lieu de paris \n ")
-                        VN += 1
-
-#print(chanson)
-#print(count)
-print(len(chanson))
+        ax1.set_xlabel('longueur des titres de %s'%nom_artiste, color='b')
 
 
-# # Enregistrer les chansons dans un json.
+        fig.tight_layout()
+        pyplot.savefig("Data/image memoire/%s.png"%nom_artiste)
+        pyplot.show()
 
-# In[20]:
+
+# In[ ]:
 
 
-comptage = 0
 
-num_chanson = []
+       
 
-for i in chanson:
-    m = []
-    nv_echantillon = "\n".join(i)
-    m.append(nv_echantillon)
-    #print(m)
-    #num_chanson.append(nv_echantillon)
-    num_chanson.append(m)
-    #print(num_chanson[comptage])
+
+# In[ ]:
+
+
+artiste = []
+toutes_les_chansons = []
+tous_les_mots = []
+nbre_de_texte_traitable = 0
+nbre_de_texte_non_traitable = 0
+nbre_de_mot_totale = 0
+nbre_de_mot_par_chanson = []
+nbre_mot_totale = []
+moyenne_toto = []
+for i in moyenne_toto:
+    moyenne_totale = sum(i)/len(moyenne_toto)
+    print(chanteur, moyenne_totale)
+chansons.append(parole)
+            toutes_les_chansons.append(chansons)
+            mots = Splittxt3(parole)
+            #print(mots)
+            nbre_mot_totale.append(mots)
+            moyenne_mot = sum(len(mots))/len(nbre_mot_toto)
+            moyenne_toto.append(moyenne_mot)
+for liste_chansons in tqdm.tqdm(toutes_les_chansons):
+    for chanson in liste_chansons:
+        try:
+            mots = Splittxt3(chanson)
+            tous_les_mots.append(mots)
+        except:
+            tous_les_mots.append([])
+        if chanson != None:
+            nbre_de_texte_traitable += 1
+        else:
+            nbre_de_texte_non_traitable += 1
+    #artiste.append(chanteur)
+#print(nbre_de_texte_non_traitable)
+#print(nbre_de_texte_traitable)
+#print(tous_les_mots)
+for liste_mots in tqdm.tqdm(tous_les_mots):
+    nbre_de_mot_par_chanson.append(len(liste_mots))
+    nbre_de_mot_par_chanson.append(0)
+    for mot in liste_mots:
+        nbre_de_mot_totale += 1
+#print(nbre_de_mot_par_chanson)
+#print(nbre_de_mot_totale)
+
+
+# In[3]:
+
+
+import os
+if os.path.exists("Data/Dictionnaire_interro_lieux_paris_large.json"):
+    with open("Data/Dictionnaire_interro_lieux_paris_large.json", encoding="UTF-8") as f:
+        dic_interro_des_lieux = json.load(f)
+
+
+# In[ ]:
+
+
+#dic_for_map = {}
+#dic_for_map = {"ID":  ,}
+to_map = []
+longueur = 0
+import tqdm
+from geopy.geocoders import Nominatim
+for lieu, valeur in tqdm.tqdm(dic_interro_des_lieux.items()):
+    date_titre = []
+    for artiste, liste in valeur.items():
         
-    #print(num_chanson[comptage], "\n")
-        
-        
-#print(num_chanson[0])    
-Dic_nouvelle_chansons = {}
-#Dic_nouvelle_chansons.setdefault()
+        date = liste[0][1] #date
+        titre = liste[0][0] #titre
+        date_titre.append(date)
+        date_titre.append(date)
+        if date is not None:
+            paris = ",Iles-de-France"
+            geolocator = Nominatim(user_agent="Tiago")
+            try:
+                location = geolocator.geocode("{}, {}".format(lieu, paris), timeout=20 )
+                adresse = location.address
+                to_map.append([date, titre, lieu, adresse, location.latitude, location.longitude])
+                #print(to_map)
+            except:
+                pass
+print(to_map)
 
-#Dic_nouvelle_chansons["all"]["Titre_chanson"] = {}
-#Dic_nouvelle_chansons["all"]["Auteur"]
-#Dic_nouvelle_chansons["all"]["lyrics"] = {}
+        #print(location.address)
+        #print((location.latitude, location.longitude))
+        #print(location.raw)
 
-#Dic_nouvelle_chansons["Titre_chanson"] = {}
-#Dic_nouvelle_chansons["lyrics"] = {}
-for elem in start:
-    #Dic_nouvelle_chansons.setdefault()
-    Dic_nouvelle_chansons["all"] = {}
-    titre = elem["full_title"]
-    try:
-        artiste = elem["album"]["artist"]["name"]
-    except:
-        artiste = "none"
-    if titre not in Dic_nouvelle_chansons:
-        Dic_nouvelle_chansons["all"]["Titre_chanson"] = titre
-        #print(Dic_nouvelle_chansons)
-        Dic_nouvelle_chansons["all"]["Auteur"] = artiste
-        Dic_nouvelle_chansons["all"]["lyrics"] = num_chanson[comptage]
-        comptage += 1
-
-#with open("Data/nouvel_echantillon.json", "w") as w:
-    #w.write(json.dumps(Dic_nouvelle_chansons, indent=2))
-print(Dic_nouvelle_chansons)
-
-
-# # Exemple qui fonctionne
-
-# In[16]:
+import csv
+with open('to_map.csv', 'w', newline='') as file:
+    writer = csv.writer(file, quoting=csv.QUOTE_ALL,delimiter=';')
+    writer.writerows(to_map)
+#with open("to_map.csv", "w" ,newline='') as csvfile:
+    #writer = csv.writer(csvfile)
+    #writer.writerow(to_map)
+    #spamreader = csv.reader(csvfile, delimiter=' ', quotechar= '|')
+    #for row in spamreader:
+        #print('; '.join(row))
+print(to_map)
 
 
-dicoooooooo = {}
-count = 0 
-for elem in start:
-    titre = elem["full_title"]
-    dicoooooooo[titre] = {}
-    dicoooooooo[titre]["lyrics"] =  {}
-    dicoooooooo[titre]["lyrics"] = num_chanson[count]
-    count += 1
-    
-print(dicoooooooo)
+# In[ ]:
+
+
+1/0
+            
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
