@@ -321,6 +321,11 @@ Format de `resultats/entites/*.json` :
 ```
 
 ---
+## Historique du projet
+
+Le mémoire, le code d'analyse et les résultats ont été réalisés en 2022, dans le cadre de mon Master 1 *Langue et Informatique*. Le code de l'époque reste consultable sur la branche [`version-originale-2022`](https://github.com/Tiiiagooo/Memoire/tree/version-originale-2022).
+
+En 2026, j'ai repris le projet pour le rendre lisible et réutilisable : réorganisation des fichiers, réécriture du code en package Python avec une interface en ligne de commande, correction de plusieurs erreurs et nouvelle carte interactive avec plotly. J'ai mené cette restructuration avec l'aide de Claude, un assistant IA, pour l'analyse du code existant et la réécriture. La méthode, les données et les résultats du mémoire n'ont pas changé.
 
 ## Ce qui a changé depuis la version de 2022
 
