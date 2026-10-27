@@ -110,7 +110,7 @@ Le détail (proportions par chanson, listes d'entités, discussion linguistique)
 │   ├── analyse.py              index artistes ↔ lieux ↔ années
 │   ├── evaluation.py           précision, rappel, F-mesure (micro / macro)
 │   ├── visualisation.py        Venn, histogrammes, matrices de confusion
-│   ├── carte.py                géocodage et carte
+│   ├── carte.py                géocodage et carte interactive (plotly)
 │   └── enrichissement.py       enrichissement manuel du lexique
 ├── data/                       ← données d'entrée
 │   ├── corpus/                 échantillon brut (Jacques Dutronc, format Genius)
@@ -173,7 +173,7 @@ python -m lieuxparis <commande> --help
 | `graphique` | histogramme « top 5 » pour un lieu, un artiste ou une année |
 | `chercher` | dans quelles chansons un lieu est-il cité ? |
 | `enrichir` | compléter le lexique à la main |
-| `carte` | géolocaliser les lieux (CSV) et produire une carte HTML |
+| `carte` | géolocaliser les lieux (CSV) et produire une carte interactive plotly |
 
 ### Reproduire l'étude sur l'échantillon Jacques Dutronc
 
@@ -221,7 +221,25 @@ python -m lieuxparis chercher "Place de Clichy"       # les chansons qui citent 
 python -m lieuxparis carte --html resultats/carte/carte.html
 ```
 
-Les lieux sont géocodés avec [Nominatim](https://nominatim.org/) (OpenStreetMap), à raison d'une requête par seconde. Les résultats sont mis en cache dans `resultats/carte/cache_geocodage.json` : une exécution interrompue reprend là où elle s'était arrêtée. Le CSV produit (séparateur `;`) s'importe directement dans Google My Maps ou [uMap](https://umap.openstreetmap.fr/) ; l'option `--html` génère en plus une carte interactive colorée par période (1940-2000, 2001-2010, 2011-2019, 2020+).
+La commande se fait en deux temps :
+
+1. **Géocodage** des lieux avec [Nominatim](https://nominatim.org/) (OpenStreetMap). La recherche est limitée à l'Île-de-France, pour éviter que « Chapelle » ou « Vincennes » atterrissent ailleurs en France. Chaque lieu est cherché d'abord comme « <lieu>, Paris », puis seul. Le service impose une requête par seconde. Les réponses sont mises en cache dans `resultats/carte/cache_geocodage.json`, donc une exécution interrompue reprend où elle s'était arrêtée. Un lieu mal placé se corrige directement dans ce cache.
+2. **Carte interactive** avec [plotly](https://plotly.com/python/), sans saisie à la main :
+   - une bulle par lieu et par période (1940-2000, 2001-2010, 2011-2019, 2020+), comme sur les cartes du mémoire ;
+   - la taille de la bulle dépend du nombre de chansons qui citent le lieu ;
+   - le survol affiche le lieu, le nombre de chansons et d'artistes, et la liste des titres ;
+   - un clic sur une période dans la légende la masque ou l'affiche, pour comparer les époques ;
+   - quand un lieu est cité à plusieurs périodes, les bulles sont légèrement décalées pour ne pas se recouvrir.
+
+Pour retracer la carte sans géocoder à nouveau, à partir du CSV déjà produit :
+
+```bash
+python -m lieuxparis carte --depuis-csv --html resultats/carte/carte.html
+```
+
+Le CSV (séparateur `;`) s'importe aussi dans Google My Maps ou [uMap](https://umap.openstreetmap.fr/).
+
+Depuis Python, `carte_plotly(lignes, "carte.html", autonome=True)` inclut plotly.js dans le fichier pour qu'il s'ouvre sans connexion au CDN. Le fond de carte, lui, demande toujours internet. Le paramètre `fond` change le style : `"open-street-map"`, `"carto-darkmatter"`, etc.
 
 ### Compléter le lexique
 
@@ -311,7 +329,8 @@ Le code d'origine (un notebook de 2 700 lignes exporté en script) a été réé
 - **True casing** : la ligne était reconstruite par `" ".join(...)`, ce qui insérait des espaces parasites (« petit , petit », « l' index ») ; seul le premier mot est maintenant remplacé.
 - **Matrice de confusion** : les cases *FP* et *VN* étaient inversées dans le graphique, et la « *accuracy* » calculée était en fait une précision.
 - **Évaluation** : la position des entités prédites mélangeait indices de tokens et de caractères.
-- **Géocodage** : requêtes espacées d'une seconde (conditions d'usage de Nominatim), cache, et les erreurs réseau ne sont plus enregistrées comme « lieu introuvable ».
+- **Géocodage** : recherche limitée à l'Île-de-France, requêtes espacées d'une seconde (conditions d'usage de Nominatim), cache, et les erreurs réseau ne sont plus enregistrées comme « lieu introuvable ».
+- **Carte** : les symboles posés à la main dans Google My Maps sont remplacés par une carte plotly générée automatiquement.
 - **Données** : le lexique était présent en double (`lieux_paris/` et `lieux_paris/lieux_paris/`) avec des fichiers de conflit de fusion (`Puits_de_Paris_BASE_1344.json`…) ; `all_entites2.json` contenait deux objets JSON collés et n'était plus lisible. Tout a été dédupliqué ou réparé, et les noms de fichiers n'ont plus d'espaces ni d'accents.
 
 La version d'origine reste disponible sur la branche [`version-originale-2022`](https://github.com/Tiiiagooo/Memoire/tree/version-originale-2022).
