@@ -21,6 +21,7 @@ Tiago André De Carvalho Bene
 - [Installation](#installation)
 - [Utilisation](#utilisation)
 - [Les données](#les-données)
+- [Historique du projet](#historique-du-projet)
 - [Ce qui a changé depuis la version de 2022](#ce-qui-a-changé-depuis-la-version-de-2022)
 - [Limites connues](#limites-connues)
 - [Droits et licences](#droits-et-licences)
