@@ -168,7 +168,7 @@ def cmd_enrichir(a):
 
 
 def cmd_carte(a):
-    from .carte import carte_html, ecrire_csv, lire_csv, points
+    from .carte import carte_plotly, ecrire_csv, lire_csv, points
     if a.depuis_csv:
         lignes = lire_csv(a.csv)
     else:
@@ -176,7 +176,7 @@ def cmd_carte(a):
         lignes = points(index, lexique)
         print(f"{len(lignes)} points : {ecrire_csv(lignes, a.csv)}")
     if a.html:
-        print(f"Carte interactive : {carte_html(lignes, a.html)}")
+        print(f"Carte interactive : {carte_plotly(lignes, a.html)}")
 
 
 # --------------------------------------------------------------------------- #
@@ -262,7 +262,7 @@ def construire_parseur() -> argparse.ArgumentParser:
     s = ajout("carte", cmd_carte, "géolocaliser les lieux cités (CSV) et/ou produire une carte HTML")
     opt_index(s)
     s.add_argument("--csv", type=Path, default=config.CARTE_CSV)
-    s.add_argument("--html", type=Path, help="carte interactive (nécessite folium)")
+    s.add_argument("--html", type=Path, help="carte interactive HTML (plotly)")
     s.add_argument("--depuis-csv", action="store_true", help="ne pas géocoder : partir du CSV existant")
     return p
 
