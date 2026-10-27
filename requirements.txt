@@ -1,0 +1,17 @@
+# Traitement automatique des langues
+spacy>=3.3
+# Modèles français de spaCy : à installer séparément
+#   python -m spacy download fr_core_news_sm
+#   python -m spacy download fr_core_news_md
+#   python -m spacy download fr_core_news_lg
+
+tqdm>=4.60
+
+# Graphiques
+matplotlib>=3.5
+matplotlib-venn>=0.11
+seaborn>=0.11
+
+# Cartographie
+geopy>=2.2
+folium>=0.14   # optionnel : carte HTML interactive

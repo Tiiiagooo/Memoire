@@ -1,0 +1,47 @@
+{
+  "Paris": {
+    "adresse": "Cathédrale Notre-Dame de Paris, 6, Parvis Notre-Dame - Place Jean-Paul II, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.85293705,
+    "longitude": 2.3500501225000026
+  },
+  "Seine": {
+    "adresse": "Parc Rives de Seine - Georges Pompidou, Quartier Saint-Merri, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.8564877,
+    "longitude": 2.3490133
+  },
+  "pont d'Arcole": {
+    "adresse": "Pont d'Arcole, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.8556232,
+    "longitude": 2.3506694744830123
+  },
+  "Chapelle": {
+    "adresse": "Sainte-Chapelle, 8, Boulevard du Palais, Quartier Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, France",
+    "latitude": 48.8553933,
+    "longitude": 2.34499406295433
+  },
+  "Vincennes": {
+    "adresse": "Pagode de Vincennes, Route des Îles, Quartier du Bel-Air, Paris 12e Arrondissement, Paris, Île-de-France, France métropolitaine, 75012, France",
+    "latitude": 48.82849375,
+    "longitude": 2.415361792327203
+  },
+  "Notre-Dame": {
+    "adresse": "Cathédrale Notre-Dame de Paris, 6, Parvis Notre-Dame - Place Jean-Paul II, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.85293705,
+    "longitude": 2.3500501225000026
+  },
+  "Hôtel de Ville": {
+    "adresse": "Hôtel-de-Ville, Parc Rives de Seine - Georges Pompidou, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.85457,
+    "longitude": 2.3534647
+  },
+  "Cité": {
+    "adresse": "Cité, Allée Celestin Hennion, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.8553219,
+    "longitude": 2.3475596
+  },
+  "pont Marie": {
+    "adresse": "Pont Marie, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.852804750000004,
+    "longitude": 2.35735800499347
+  }
+}
