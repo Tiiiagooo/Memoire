@@ -89,11 +89,11 @@ flowchart LR
 |:---:|:---:|
 | ![Carte des lieux cités dans Paris](docs/figures/carte_paris_intra_muros.png) | ![Carte des lieux cités en banlieue](docs/figures/carte_paris_banlieue.png) |
 
+Le détail (proportions par chanson, listes d'entités, discussion linguistique) est dans le [mémoire](docs/memoire.pdf), chapitre 4.
+
 **La même carte, aujourd'hui générée automatiquement** avec `python -m lieuxparis carte --html carte.html` : une bulle par lieu et par période, une taille proportionnelle au nombre de chansons, la liste des titres au survol et des périodes filtrables depuis la légende.
 
 <p align="center"><img src="docs/figures/carte_interactive.png" width="800" alt="Carte interactive plotly des lieux de Paris cités dans les chansons"></p>
-Le détail (proportions par chanson, listes d'entités, discussion linguistique) est dans le [mémoire](docs/memoire.pdf), chapitre 4.
-
 ---
 
 ## Organisation du dépôt
