@@ -43,5 +43,1015 @@
     "adresse": "Pont Marie, Quartier Les Îles, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
     "latitude": 48.852804750000004,
     "longitude": 2.35735800499347
+  },
+  "Argenteuil": {
+    "adresse": "Rue d'Argenteuil, Quartier du Palais Royal, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8648718,
+    "longitude": 2.333921
+  },
+  "Aubervilliers": {
+    "adresse": "Stalingrad, Boulevard de la Villette, Quartier de la Villette, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8842416,
+    "longitude": 2.3670741
+  },
+  "Auteuil": {
+    "adresse": "Quartier d'Auteuil, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+    "latitude": 48.8477221,
+    "longitude": 2.2667376
+  },
+  "Avenue Foch": {
+    "adresse": "Avenue Foch, Quartier de la Porte-Dauphine, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+    "latitude": 48.8728625,
+    "longitude": 2.2815735
+  },
+  "Avenue Montaigne": {
+    "adresse": "Avenue Montaigne, Quartier des Champs-Élysées, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8659839,
+    "longitude": 2.3043287
+  },
+  "Avon": {
+    "adresse": "Paris connection, 62, Avenue Franklin Roosevelt, Touring-Club, Avon, Fontainebleau, Seine-et-Marne, Île-de-France, France métropolitaine, 77210, France",
+    "latitude": 48.41623,
+    "longitude": 2.7235727
+  },
+  "Baby": {
+    "adresse": "People & Baby, Rue de Florence, Quartier de l'Europe, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8821067,
+    "longitude": 2.3245758
+  },
+  "Bagneux": {
+    "adresse": "Chantier Grand Paris Express Ligne 15 Sud Gare Bagneux-Lucie Aubrac, Résidence Pablo Picasso, Bagneux, Antony, Hauts-de-Seine, Île-de-France, France métropolitaine, 92220, France",
+    "latitude": 48.8027671,
+    "longitude": 2.3185842
+  },
+  "Bagnolet": {
+    "adresse": "Alexandre Dumas, Allée Maya Surduts, Quartier Sainte-Marguerite, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.85634,
+    "longitude": 2.3944352
+  },
+  "Barbizon": {
+    "adresse": "Barbizon, Fontainebleau, Seine-et-Marne, Île-de-France, France métropolitaine, 77630, France",
+    "latitude": 48.4447386,
+    "longitude": 2.6064391
+  },
+  "Batignolles": {
+    "adresse": "Quartier des Batignolles, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8863552,
+    "longitude": 2.321457
+  },
+  "Belleville": {
+    "adresse": "Quartier de Belleville, Paris 20e Arrondissement, Paris, Île-de-France, France métropolitaine, 75020, France",
+    "latitude": 48.8717265,
+    "longitude": 2.385085
+  },
+  "Bercy": {
+    "adresse": "Paris-Bercy - Bourgogne-Pays d'Auvergne, Rampe d'accès à la gare de Bercy, Quartier de Bercy, Paris 12e Arrondissement, Paris, Île-de-France, France métropolitaine, 75012, France",
+    "latitude": 48.8391964,
+    "longitude": 2.382849
+  },
+  "Bobigny": {
+    "adresse": "Métro 5 - Bobigny, Terrasse Émilienne Moreau-Évrard, Quartier de la Porte-Saint-Martin, Paris 10e Arrondissement, Paris, Île-de-France, France métropolitaine, 75010, France",
+    "latitude": 48.8679806,
+    "longitude": 2.3638092
+  },
+  "Bois Colombes": {
+    "adresse": "Gare du Grand Paris express, Bécon, Quartier de Bécon, Courbevoie, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92400, France",
+    "latitude": 48.9053996,
+    "longitude": 2.2670671
+  },
+  "Bois de Boulogne": {
+    "adresse": "Bois de Boulogne, Paris, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92200, France",
+    "latitude": 48.8640929,
+    "longitude": 2.2482579
+  },
+  "Bois de Vincennes": {
+    "adresse": "Bois de Vincennes, Paris, Nogent-sur-Marne, Val-de-Marne, Île-de-France, France métropolitaine, 94410, France",
+    "latitude": 48.831548,
+    "longitude": 2.4341479
+  },
+  "Bondy": {
+    "adresse": "Fontaine aux Lions, Place de la Fontaine aux Lions, Quartier du Pont-de-Flandre, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8895598,
+    "longitude": 2.3922769
+  },
+  "Boulevard Barbès": {
+    "adresse": "Boulevard Barbès, Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8868869,
+    "longitude": 2.3495547
+  },
+  "Boulevard Beaumarchais": {
+    "adresse": "Boulevard Beaumarchais, Quartier de la Roquette, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8561388,
+    "longitude": 2.3684146
+  },
+  "Boulevard Haussmann": {
+    "adresse": "Boulevard Haussmann, Quartier de la Chaussée-d'Antin, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8732352,
+    "longitude": 2.3311075
+  },
+  "Boulevard Poissonnière": {
+    "adresse": "Boulevard Poissonnière, Quartier du Mail, Paris 2e Arrondissement, Paris, Île-de-France, France métropolitaine, 75002, France",
+    "latitude": 48.8712621,
+    "longitude": 2.3443919
+  },
+  "Boulevard Raspail": {
+    "adresse": "Boulevard Raspail, Quartier Saint-Thomas-d'Aquin, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8530701,
+    "longitude": 2.3262904
+  },
+  "Boulevard Saint-Denis": {
+    "adresse": "Strasbourg - Saint-Denis, Boulevard de Sébastopol, Quartier des Arts-et-Métiers, Paris 3e Arrondissement, Paris, Île-de-France, France métropolitaine, 75003, France",
+    "latitude": 48.8693002,
+    "longitude": 2.3542855
+  },
+  "Boulevard Saint-Germain": {
+    "adresse": "Boulevard Saint-Germain, Quartier des Invalides, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8624364,
+    "longitude": 2.3192669
+  },
+  "Boulevard Saint-Michel": {
+    "adresse": "Boulevard Saint-Michel, Quartier du Val-de-Grâce, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8415259,
+    "longitude": 2.3376651
+  },
+  "Boulevard de la Villette": {
+    "adresse": "Boulevard de la Villette, Quartier de l'Hôpital Saint-Louis, Paris 10e Arrondissement, Paris, Île-de-France, France métropolitaine, 75010, France",
+    "latitude": 48.8775235,
+    "longitude": 2.3706614
+  },
+  "Boulevard des Capucines": {
+    "adresse": "Boulevard des Capucines, Quartier de la Chaussée-d'Antin, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8708245,
+    "longitude": 2.3333568
+  },
+  "Bourse": {
+    "adresse": "Bourse, Piste Cyclable Paul Varry, Vivienne, Paris 2e Arrondissement, Paris, Île-de-France, France métropolitaine, 75002, France",
+    "latitude": 48.8686539,
+    "longitude": 2.3414383
+  },
+  "Brunoy": {
+    "adresse": "Avenue de Paris, Bosserons, Brunoy, Évry, Essonne, Île-de-France, France métropolitaine, 91800, France",
+    "latitude": 48.6813766,
+    "longitude": 2.4966124
+  },
+  "Buttes Chaumont": {
+    "adresse": "Buttes Chaumont, Avenue Jacques de Liniers, Quartier du Combat, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8783961,
+    "longitude": 2.3812008
+  },
+  "Chambourcy": {
+    "adresse": "Centre Porsche Paris Ouest, Chemin Rural d'Aigremont, Poissy, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78240, France",
+    "latitude": 48.9135059,
+    "longitude": 2.0271115
+  },
+  "Champs Élysées": {
+    "adresse": "Champs Élysées, Quartier des Champs-Élysées, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8707573,
+    "longitude": 2.3053312
+  },
+  "Charny": {
+    "adresse": "Charny, Meaux, Seine-et-Marne, Île-de-France, France métropolitaine, 77410, France",
+    "latitude": 48.9716476,
+    "longitude": 2.7608632
+  },
+  "Charonne": {
+    "adresse": "Charonne, Boulevard Voltaire, Quartier de la Roquette, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8547411,
+    "longitude": 2.3853043
+  },
+  "Chelles": {
+    "adresse": "Communauté d'Agglomération Paris - Vallée de la Marne, 39, Avenue François Mitterrand, Castermant, Résistance, Chelles, Torcy, Seine-et-Marne, Île-de-France, France métropolitaine, 77500, France",
+    "latitude": 48.8775409,
+    "longitude": 2.5972806
+  },
+  "Clamart": {
+    "adresse": "Chantier Grand Paris Express Ligne 15 Sud Gare Clamart, Clamart, Antony, Hauts-de-Seine, Île-de-France, France métropolitaine, 92140, France",
+    "latitude": 48.8138228,
+    "longitude": 2.274545
+  },
+  "Clichy": {
+    "adresse": "Place de Clichy, Quartier des Batignolles, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8834776,
+    "longitude": 2.3272899
+  },
+  "Clignancourt": {
+    "adresse": "Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8940584,
+    "longitude": 2.345678
+  },
+  "Colombes": {
+    "adresse": "Sentier de Paris, Petite-Garenne, Petite Garenne, Colombes, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92700, France",
+    "latitude": 48.9162809,
+    "longitude": 2.252287
+  },
+  "Courbevoie": {
+    "adresse": "La Défense de Paris, N 1013, La Défense, Quartier Gambetta, Courbevoie, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92400, France",
+    "latitude": 48.8902669,
+    "longitude": 2.243308
+  },
+  "Courcouronnes": {
+    "adresse": "Université d'Évry Paris Saclay - Bâtiment Premiers Cycles, 1, Allée Toussaint Louverture, Évry-Centre, Courcouronnes, Évry, Évry-Courcouronnes, Évry, Essonne, Île-de-France, France métropolitaine, 91000, France",
+    "latitude": 48.6233857,
+    "longitude": 2.423989
+  },
+  "Croix Blanche": {
+    "adresse": "Café de la Croix Blanche, 20, Rue de Paris, La Bourgognerie, Tournan-en-Brie, Torcy, Seine-et-Marne, Île-de-France, France métropolitaine, 77220, France",
+    "latitude": 48.7402833,
+    "longitude": 2.7643772
+  },
+  "Créteil": {
+    "adresse": "A 86, Quartier de Picpus, Paris 12e Arrondissement, Paris, Saint-Maurice, Nogent-sur-Marne, Val-de-Marne, Île-de-France, France métropolitaine, 94410, France",
+    "latitude": 48.8163988,
+    "longitude": 2.4516692
+  },
+  "Doue": {
+    "adresse": "Église Saint-Germain-de-Paris, Rue de l'Église, Saint-Germain-sous-Doue, Provins, Seine-et-Marne, Île-de-France, France métropolitaine, 77169, France",
+    "latitude": 48.8517447,
+    "longitude": 3.1459241
+  },
+  "Draveil": {
+    "adresse": "Paris-Jardin, Draveil, Évry, Essonne, Île-de-France, France métropolitaine, 91210, France",
+    "latitude": 48.6874172,
+    "longitude": 2.4067546
+  },
+  "Elancourt": {
+    "adresse": "Parc d'Activités de Pissaloup - Paris-Saclay, La Clef de Saint-Pierre, Élancourt, Rambouillet, Yvelines, Île-de-France, France métropolitaine, 78990, France",
+    "latitude": 48.7944392,
+    "longitude": 1.9798665
+  },
+  "Evry": {
+    "adresse": "Université d'Évry-Paris-Saclay, 8, Rue Père André Jarlan, Évry-Centre, Évry, Évry-Courcouronnes, Évry, Essonne, Île-de-France, France métropolitaine, 91000, France",
+    "latitude": 48.6233961,
+    "longitude": 2.4244481
+  },
+  "Fresnes": {
+    "adresse": "Centre horticole de la Ville de Paris, Fresnes, L'Haÿ-les-Roses, Val-de-Marne, Île-de-France, France métropolitaine, 94260, France",
+    "latitude": 48.7485252,
+    "longitude": 2.3338635
+  },
+  "Gare": {
+    "adresse": "Quartier de la Gare, Paris 13e Arrondissement, Paris, Île-de-France, France métropolitaine, 75013, France",
+    "latitude": 48.8278978,
+    "longitude": 2.3728769
+  },
+  "Gennevilliers": {
+    "adresse": "Gare des Agnettes - Ligne 15 Ouest - Grand Paris Express, Les Agnettes, Gennevilliers, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92230, France",
+    "latitude": 48.922557,
+    "longitude": 2.2872964
+  },
+  "Goutte d'Or": {
+    "adresse": "Quartier de la Goutte-d'Or, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8929139,
+    "longitude": 2.3560817
+  },
+  "Grand Palais": {
+    "adresse": "Grand Palais, Avenue du Général-Eisenhower, Quartier des Champs-Élysées, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8661614,
+    "longitude": 2.3122229
+  },
+  "Grenelle": {
+    "adresse": "Bir-Hakeim, Boulevard de Grenelle, Quartier de Grenelle, Paris 15e Arrondissement, Paris, Île-de-France, France métropolitaine, 75015, France",
+    "latitude": 48.8538898,
+    "longitude": 2.2893811
+  },
+  "Grigny": {
+    "adresse": "Blanchisserie de Paris, Chemin des Chaulais, Les Tuileries, Grigny, Évry, Essonne, Île-de-France, France métropolitaine, 91350, France",
+    "latitude": 48.6470317,
+    "longitude": 2.3894424
+  },
+  "Guyancourt": {
+    "adresse": "Ouvrage Minière - Grand Paris Express, Guyancourt, Versailles, Yvelines, Île-de-France, France métropolitaine, 78280, France",
+    "latitude": 48.7767092,
+    "longitude": 2.0929598
+  },
+  "Halles": {
+    "adresse": "Châtelet - Les Halles, Passage de la Canopée, Quartier Les Halles, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8625124,
+    "longitude": 2.3464528
+  },
+  "Igny": {
+    "adresse": "Igny, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91430, France",
+    "latitude": 48.7423961,
+    "longitude": 2.2257833
+  },
+  "Invalides": {
+    "adresse": "Invalides, Rue de Constantine, Quartier des Invalides, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8603353,
+    "longitude": 2.3146799
+  },
+  "Javel": {
+    "adresse": "Javel, Port de Javel-Haut, Quartier de Javel, Paris 15e Arrondissement, Paris, Île-de-France, France métropolitaine, 75015, France",
+    "latitude": 48.8463026,
+    "longitude": 2.2768999
+  },
+  "La Courneuve": {
+    "adresse": "Chantier Grand Paris Express Lignes 16/17 - Entonnement Ouest - Rue de Verdun, 4000 Nord, La Courneuve, Saint-Denis, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93120, France",
+    "latitude": 48.9300006,
+    "longitude": 2.4153714
+  },
+  "La Villette": {
+    "adresse": "Quartier de la Villette, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8904889,
+    "longitude": 2.3800721
+  },
+  "Les Mureaux": {
+    "adresse": "Les Mureaux, Mantes-la-Jolie, Yvelines, Île-de-France, France métropolitaine, 78130, France",
+    "latitude": 48.9931578,
+    "longitude": 1.909928
+  },
+  "Les Ulis": {
+    "adresse": "Colt Paris 3, 15, Avenue du Cap Horn, Parc d'Activités de Courtabœuf, Les Ulis, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91400, France",
+    "latitude": 48.6747592,
+    "longitude": 2.1971694
+  },
+  "Lisses": {
+    "adresse": "Rue de Paris, Lisses, Évry, Essonne, Île-de-France, France métropolitaine, 91090, France",
+    "latitude": 48.5969224,
+    "longitude": 2.4255425
+  },
+  "Lombards": {
+    "adresse": "Le Duc des Lombards, Rue des Lombards, Quartier Les Halles, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8596927,
+    "longitude": 2.3486049
+  },
+  "Longjumeau": {
+    "adresse": "Rue de Longjumeau, Parc ICADE Paris Orly-Rungis, Quartier Robert Schuman, Rungis, L'Haÿ-les-Roses, Val-de-Marne, Île-de-France, France métropolitaine, 94150, France",
+    "latitude": 48.7441448,
+    "longitude": 2.3544028
+  },
+  "Louvre": {
+    "adresse": "Musée du Louvre, Rue de Rivoli, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8611473,
+    "longitude": 2.3380277
+  },
+  "Luxembourg": {
+    "adresse": "Luxembourg, Boulevard Saint-Michel, Quartier du Val-de-Grâce, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8454719,
+    "longitude": 2.339808
+  },
+  "Maison Blanche": {
+    "adresse": "Maison Blanche, Avenue d'Italie, Maison-Blanche, Paris 13e Arrondissement, Paris, Île-de-France, France métropolitaine, 75013, France",
+    "latitude": 48.8214836,
+    "longitude": 2.3588859
+  },
+  "Maison Rouge": {
+    "adresse": "Brasserie Maison Rouge, 12, Rue de la Ferronnerie, Quartier Les Halles, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8604728,
+    "longitude": 2.3466897
+  },
+  "Malakoff": {
+    "adresse": "Chantier Grand Paris Express Ligne 15 Sud Gare Clamart, Clamart, Antony, Hauts-de-Seine, Île-de-France, France métropolitaine, 92140, France",
+    "latitude": 48.8138228,
+    "longitude": 2.274545
+  },
+  "Marais": {
+    "adresse": "Le Marais, Paris, Île-de-France, France métropolitaine, France",
+    "latitude": 48.8603823,
+    "longitude": 2.360742
+  },
+  "Massy": {
+    "adresse": "Ouvrage Allende - Grand Paris Express, Villaine, Massy, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91300, France",
+    "latitude": 48.7306485,
+    "longitude": 2.2639179
+  },
+  "Meaux": {
+    "adresse": "Rue de Meaux, Quartier de la Villette, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.878655,
+    "longitude": 2.3709461
+  },
+  "Melun": {
+    "adresse": "Passage de Melun, Quartier de la Villette, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8838936,
+    "longitude": 2.3764163
+  },
+  "Mennecy": {
+    "adresse": "Rue de Paris, Domaine Natura, Mennecy, Évry, Essonne, Île-de-France, France métropolitaine, 91540, France",
+    "latitude": 48.5723443,
+    "longitude": 2.4341354
+  },
+  "Messy": {
+    "adresse": "Messy Nessy's Cabinet, 19, Rue de Bièvre, Quartier Saint-Victor, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8504532,
+    "longitude": 2.3502213
+  },
+  "Meudon": {
+    "adresse": "Porte du Bas-Meudon, Quartier de Javel, Paris 15e Arrondissement, Paris, Île-de-France, France métropolitaine, 75015, France",
+    "latitude": 48.8387201,
+    "longitude": 2.2697807
+  },
+  "Monnaie": {
+    "adresse": "Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8545809,
+    "longitude": 2.3401539
+  },
+  "Montfermeil": {
+    "adresse": "Chantier Grand Paris Express Ligne 16 - Clichy-Montfermeil, Les Bosquets, Montfermeil, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93370, France",
+    "latitude": 48.9039498,
+    "longitude": 2.5566174
+  },
+  "Montgeron": {
+    "adresse": "Prochains RER D en direction de Paris, Rue du Docteur Léon Deglaire, Montgeron, Évry, Essonne, Île-de-France, France métropolitaine, 91230, France",
+    "latitude": 48.7084427,
+    "longitude": 2.4616272
+  },
+  "Montmartre": {
+    "adresse": "Montmartre, Paris, Île-de-France, France métropolitaine, France",
+    "latitude": 48.8854619,
+    "longitude": 2.3391535
+  },
+  "Montparnasse": {
+    "adresse": "Montparnasse, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8434755,
+    "longitude": 2.3282995
+  },
+  "Montreuil": {
+    "adresse": "Porte de Montreuil, Avenue de la Porte de Montreuil, Quartier de Charonne, Paris 20e Arrondissement, Paris, Île-de-France, France métropolitaine, 75020, France",
+    "latitude": 48.8535352,
+    "longitude": 2.4106565
+  },
+  "Morangis": {
+    "adresse": "Trouillet Rent Paris Sud - Location Utilitaire, Avenue Ferdinand de Lesseps, Z. I. Les Sables, Morangis, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91420, France",
+    "latitude": 48.6992301,
+    "longitude": 2.3387477
+  },
+  "Moulin": {
+    "adresse": "La Pièce du Bois de Paris, Le Vieux Moulin, Us, Pontoise, Val-d'Oise, Île-de-France, France métropolitaine, 95450, France",
+    "latitude": 49.115999,
+    "longitude": 1.9739043
+  },
+  "Ménilmontant": {
+    "adresse": "Ménilmontant, Place Jean Ferrat, Quartier Saint-Ambroise, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8667039,
+    "longitude": 2.3833464
+  },
+  "Nanterre": {
+    "adresse": "Paris, Promenade Jacques-Baumel, Mont-Valérien, Quartier Mont-Valérien, Suresnes, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92150, France",
+    "latitude": 48.8715936,
+    "longitude": 2.2133582
+  },
+  "Noisiel": {
+    "adresse": "Communauté d'Agglomération Paris - Vallée de la Marne, 5, Cours de l'Arche Guédon, L'Arche Guédon, Torcy, Seine-et-Marne, Île-de-France, France métropolitaine, 77200, France",
+    "latitude": 48.850368,
+    "longitude": 2.6362929
+  },
+  "Odéon": {
+    "adresse": "Odéon, Boulevard Saint-Germain, Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8523043,
+    "longitude": 2.3393706
+  },
+  "Opéra": {
+    "adresse": "Opéra, Boulevard des Capucines, Gaillon, Paris 2e Arrondissement, Paris, Île-de-France, France métropolitaine, 75002, France",
+    "latitude": 48.8706446,
+    "longitude": 2.33233
+  },
+  "Orly": {
+    "adresse": "D'Orly, Rue Rouget de Lisle, Quartier Vendôme, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8658747,
+    "longitude": 2.326008
+  },
+  "Orsay": {
+    "adresse": "Musée d'Orsay, 1, Rue de la Légion d'Honneur, Quartier Saint-Thomas-d'Aquin, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8599179,
+    "longitude": 2.3265849
+  },
+  "Osny": {
+    "adresse": "Route de Paris à Dieppe, La Demie Lieue Sud, Osny, Pontoise, Val-d'Oise, Île-de-France, France métropolitaine, 95520, France",
+    "latitude": 49.0691462,
+    "longitude": 2.0835786
+  },
+  "Palaiseau": {
+    "adresse": "Paris, Voie des Prés, Résidence du Parc, Villiers-sur-Orge, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91700, France",
+    "latitude": 48.655253,
+    "longitude": 2.304977
+  },
+  "Panthéon": {
+    "adresse": "Panthéon, Place du Panthéon, Quartier de la Sorbonne, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8461947,
+    "longitude": 2.3460507
+  },
+  "Pantin": {
+    "adresse": "Porte de Pantin, Avenue Jean Jaurès, Quartier d'Amérique, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8886574,
+    "longitude": 2.3926771
+  },
+  "Passy": {
+    "adresse": "Passy, Paris, Île-de-France, France métropolitaine, 75016, France",
+    "latitude": 48.8575047,
+    "longitude": 2.2809828
+  },
+  "Place Gambetta": {
+    "adresse": "Place Gambetta, Quartier du Père-Lachaise, Paris 20e Arrondissement, Paris, Île-de-France, France métropolitaine, 75020, France",
+    "latitude": 48.8649777,
+    "longitude": 2.3986189
+  },
+  "Place Saint-Michel": {
+    "adresse": "Place Saint-Michel, Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8533212,
+    "longitude": 2.3437596
+  },
+  "Place de Clichy": {
+    "adresse": "Place de Clichy, Promenade Marcel Carné, Quartier des Grandes-Carrières, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8835918,
+    "longitude": 2.3278748
+  },
+  "Place de l'Étoile": {
+    "adresse": "Place Charles de Gaulle, Quartier des Champs-Élysées, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8733632,
+    "longitude": 2.2957417
+  },
+  "Place de la République": {
+    "adresse": "Place de la République, Quartier de la Folie-Méricourt, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8675421,
+    "longitude": 2.3639583
+  },
+  "Plaisance": {
+    "adresse": "Plaisance, Rue Raymond Losserand, Quartier de Plaisance, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.8317665,
+    "longitude": 2.3140421
+  },
+  "Poissy": {
+    "adresse": "Centre de secours Poissy, 48-50, Rue du Cardinal Lemoine, Quartier Saint-Victor, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8465369,
+    "longitude": 2.3511641
+  },
+  "Pologne": {
+    "adresse": "Ambassade de Pologne, 1, Rue de Talleyrand, Quartier des Invalides, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8592175,
+    "longitude": 2.3154689
+  },
+  "Pont Neuf": {
+    "adresse": "Pont Neuf, Quai des Grands Augustins, Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8565248,
+    "longitude": 2.3408169
+  },
+  "Pont d'Austerlitz": {
+    "adresse": "Pont d'Austerlitz, Bretelle de contournement de la place Valhubert, Quartier de la Salpêtrière, Paris 13e Arrondissement, Paris, Île-de-France, France métropolitaine, 75013, France",
+    "latitude": 48.8449835,
+    "longitude": 2.3661201
+  },
+  "Pont des Arts": {
+    "adresse": "Pont des Arts, Port du Louvre, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8584075,
+    "longitude": 2.3375477
+  },
+  "Pontoise": {
+    "adresse": "Piscine Pontoise, 19, Rue de Pontoise, Quartier Saint-Victor, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8490865,
+    "longitude": 2.3517531
+  },
+  "Porte Dauphine": {
+    "adresse": "Porte Dauphine, Avenue Hubert Germain, Quartier de la Porte-Dauphine, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+    "latitude": 48.8714176,
+    "longitude": 2.2773358
+  },
+  "Porte d'Italie": {
+    "adresse": "Porte d'Italie, Avenue d'Italie, Maison-Blanche, Paris 13e Arrondissement, Paris, Île-de-France, France métropolitaine, 75013, France",
+    "latitude": 48.819054,
+    "longitude": 2.3594056
+  },
+  "Porte d'Orléans": {
+    "adresse": "Porte d'Orléans, Avenue du Général Leclerc, Quartier du Petit-Montrouge, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.8236307,
+    "longitude": 2.3256075
+  },
+  "Porte de Clichy": {
+    "adresse": "Porte de Clichy, Avenue de la Porte de Clichy, Quartier des Épinettes, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8948169,
+    "longitude": 2.3132665
+  },
+  "Porte de Clignancourt": {
+    "adresse": "Porte de Clignancourt, Passage du Mont Cenis, Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8973976,
+    "longitude": 2.3448521
+  },
+  "Porte de Pantin": {
+    "adresse": "Porte de Pantin, Avenue Jean Jaurès, Quartier d'Amérique, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8886574,
+    "longitude": 2.3926771
+  },
+  "Porte de Vanves": {
+    "adresse": "Porte de Vanves, Boulevard Brune, Quartier de Plaisance, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.827676,
+    "longitude": 2.3054796
+  },
+  "Porte de la Villette": {
+    "adresse": "Porte de la Villette, Avenue Corentin Cariou, Quartier du Pont-de-Flandre, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8974039,
+    "longitude": 2.385591
+  },
+  "Porte de saint-ouen": {
+    "adresse": "Porte de Saint-Ouen, Avenue de Saint-Ouen, Quartier des Grandes-Carrières, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8971558,
+    "longitude": 2.3288425
+  },
+  "Porte des Lilas": {
+    "adresse": "Porte des Lilas, Avenue de la Porte des Lilas, Quartier d'Amérique, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8775072,
+    "longitude": 2.4073793
+  },
+  "Puteaux": {
+    "adresse": "Pont de Puteaux, Quartier de la Muette, Paris 16e Arrondissement, Paris, Puteaux, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92800, France",
+    "latitude": 48.8765398,
+    "longitude": 2.2453851
+  },
+  "Quai des Grands Augustins": {
+    "adresse": "Quai des Grands Augustins, Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8541262,
+    "longitude": 2.3435358
+  },
+  "Quai des Orfèvres": {
+    "adresse": "Quai des Orfèvres, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8563336,
+    "longitude": 2.341892
+  },
+  "Quartier latin": {
+    "adresse": "Quartier latin, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8486028,
+    "longitude": 2.3425156
+  },
+  "Reuilly": {
+    "adresse": "Reuilly, Paris 12e Arrondissement, Paris, Île-de-France, France métropolitaine, 75012, France",
+    "latitude": 48.8443144,
+    "longitude": 2.3898419
+  },
+  "Roule": {
+    "adresse": "Saint-Philippe du Roule, Avenue Franklin Delano Roosevelt, Quartier du Faubourg-du-Roule, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8722352,
+    "longitude": 2.3100505
+  },
+  "Rue Botzaris": {
+    "adresse": "Rue Botzaris, Quartier du Combat, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.879288,
+    "longitude": 2.384246
+  },
+  "Rue Jacob": {
+    "adresse": "Rue Jacob, Quartier de Saint-Germain-des-Prés, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8555259,
+    "longitude": 2.3338807
+  },
+  "Rue Saint-Vincent": {
+    "adresse": "Rue Saint-Vincent, Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.888274,
+    "longitude": 2.3426374
+  },
+  "Rue de Florence": {
+    "adresse": "Rue de Florence, Quartier de l'Europe, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8821348,
+    "longitude": 2.3252272
+  },
+  "Rue de Milan": {
+    "adresse": "Rue de Milan, Quartier Saint-Georges, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8788517,
+    "longitude": 2.3282842
+  },
+  "Rue de Rome": {
+    "adresse": "Rue de Rome, Quartier de l'Europe, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8765231,
+    "longitude": 2.3234389
+  },
+  "Rue de la Paix": {
+    "adresse": "Rue de la Paix, Gaillon, Paris 2e Arrondissement, Paris, Île-de-France, France métropolitaine, 75002, France",
+    "latitude": 48.8692848,
+    "longitude": 2.3312305
+  },
+  "Rue des Acacias": {
+    "adresse": "Rue des Acacias, Quartier des Ternes, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8769407,
+    "longitude": 2.2918038
+  },
+  "Rue des Lombards": {
+    "adresse": "Rue des Lombards, Quartier Les Halles, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8596373,
+    "longitude": 2.34843
+  },
+  "Rue des petits hôtels": {
+    "adresse": "Rue des Petits Hôtels, Quartier Saint-Vincent-de-Paul, Paris 10e Arrondissement, Paris, Île-de-France, France métropolitaine, 75010, France",
+    "latitude": 48.8775713,
+    "longitude": 2.3523859
+  },
+  "Rue du Vieux Colombier": {
+    "adresse": "Rue du Vieux Colombier, Quartier Notre-Dame-des-Champs, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8514777,
+    "longitude": 2.331509
+  },
+  "Rungis": {
+    "adresse": "Rungis, Rue Bobillot, Maison-Blanche, Paris 13e Arrondissement, Paris, Île-de-France, France métropolitaine, 75013, France",
+    "latitude": 48.8227023,
+    "longitude": 2.3471212
+  },
+  "SEVRAN": {
+    "adresse": "Chantier Grand Paris Express Ligne 16 - Gare de Sevran - Beaudottes, Les Beaudottes, Sevran, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93270, France",
+    "latitude": 48.9472825,
+    "longitude": 2.5254307
+  },
+  "Saint-Jacques": {
+    "adresse": "Saint-Jacques, Boulevard Saint-Jacques, Quartier du Parc-de-Montsouris, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.8329806,
+    "longitude": 2.3368199
+  },
+  "Sarcelles": {
+    "adresse": "Aéroport de Paris - Le Bourget, Avenue de Stalingrad, Garges-lès-Gonesse, Sarcelles, Val-d'Oise, Île-de-France, France métropolitaine, 95140, France",
+    "latitude": 48.9587658,
+    "longitude": 2.4382772
+  },
+  "Sartrouville": {
+    "adresse": "Hexagone Paris Chic, Avenue Jean Jaurès, La Vaudoire, Sartrouville, Saint-Germain-en-Laye, Yvelines, Île-de-France, France métropolitaine, 78500, France",
+    "latitude": 48.9397907,
+    "longitude": 2.1593737
+  },
+  "Sceaux": {
+    "adresse": "Chemin de Paris, Sceaux, Antony, Hauts-de-Seine, Île-de-France, France métropolitaine, 92330, France",
+    "latitude": 48.781408,
+    "longitude": 2.3010799
+  },
+  "Seine-Saint-Denis": {
+    "adresse": "Aéroport de Paris-Charles-de-Gaulle, Tremblay-en-France, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93290, France",
+    "latitude": 49.0068908,
+    "longitude": 2.571082
+  },
+  "Sevran": {
+    "adresse": "Chantier Grand Paris Express Ligne 16 - Gare de Sevran - Beaudottes, Les Beaudottes, Sevran, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93270, France",
+    "latitude": 48.9472825,
+    "longitude": 2.5254307
+  },
+  "Sorbonne": {
+    "adresse": "Quartier de la Sorbonne, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8490967,
+    "longitude": 2.3453105
+  },
+  "Stains": {
+    "adresse": "Lycée Professionnel École de production Paris Grand Nord, Rue Joséphine Baker, Campus Urban Valley, Pierrefitte-sur-Seine, Stains, Saint-Denis, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93240, France",
+    "latitude": 48.9588459,
+    "longitude": 2.3692107
+  },
+  "Thiais": {
+    "adresse": "Clinique Vétérinaire du Grand Paris, Rue Paul Vaillant Couturier, Vallée Verte, Thiais, L'Haÿ-les-Roses, Val-de-Marne, Île-de-France, France métropolitaine, 94320, France",
+    "latitude": 48.7591618,
+    "longitude": 2.3948742
+  },
+  "Torcy": {
+    "adresse": "Marx Dormoy, Rue de la Chapelle, Quartier de la Chapelle, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8905061,
+    "longitude": 2.3599967
+  },
+  "Tour Eiffel": {
+    "adresse": "Tour Eiffel, 5, Avenue Anatole France, Quartier du Gros-Caillou, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8582599,
+    "longitude": 2.2945006
+  },
+  "Trappes": {
+    "adresse": "Square de la Commune de Paris, Trappes, Versailles, Yvelines, Île-de-France, France métropolitaine, 78190, France",
+    "latitude": 48.7783734,
+    "longitude": 1.9867685
+  },
+  "Tuileries": {
+    "adresse": "Tuileries, Rue de Rivoli, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8645194,
+    "longitude": 2.3296312
+  },
+  "US": {
+    "adresse": "Paris, Île-de-France, France métropolitaine, France",
+    "latitude": 48.8534951,
+    "longitude": 2.3483915
+  },
+  "Valenton": {
+    "adresse": "Base logistique - Brigade de sapeurs-pompiers de Paris, Valenton, L'Haÿ-les-Roses, Val-de-Marne, Île-de-France, France métropolitaine, 94460, France",
+    "latitude": 48.7381367,
+    "longitude": 2.4733921
+  },
+  "Vanves": {
+    "adresse": "Porte de Vanves, Boulevard Brune, Quartier de Plaisance, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.827676,
+    "longitude": 2.3054796
+  },
+  "Versailles": {
+    "adresse": "Paris Expo Porte de Versailles, Paris 15e Arrondissement, Paris, Île-de-France, France métropolitaine, 75015, France",
+    "latitude": 48.8287212,
+    "longitude": 2.2889813
+  },
+  "Villeneuve La Garenne": {
+    "adresse": "ESH Paris Hotelschool, Rue Villeneuve, Clichy, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92110, France",
+    "latitude": 48.9072484,
+    "longitude": 2.3165086
+  },
+  "Villeneuve la Garenne": {
+    "adresse": "ESH Paris Hotelschool, Rue Villeneuve, Clichy, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92110, France",
+    "latitude": 48.9072484,
+    "longitude": 2.3165086
+  },
+  "Villeparisis": {
+    "adresse": "Salle Nicole Paris, La Francilienne, Le Pin, Meaux, Seine-et-Marne, Île-de-France, France métropolitaine, 77181, France",
+    "latitude": 48.9165495,
+    "longitude": 2.6323936
+  },
+  "Villepinte": {
+    "adresse": "Parc des Expositions Paris Villepinte, La Haie-Bertrand, Villepinte, Le Raincy, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93420, France",
+    "latitude": 48.970251,
+    "longitude": 2.5211188
+  },
+  "Villetaneuse": {
+    "adresse": "Université Sorbonne Paris Nord (Paris XIII) – Villetaneuse, 99, Avenue Jean-Baptiste Clément, Saint-Leu, Villetaneuse, Saint-Denis, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93430, France",
+    "latitude": 48.956638,
+    "longitude": 2.3405983
+  },
+  "Villette": {
+    "adresse": "Villette, 9, Avenue Corentin Cariou, Quartier du Pont-de-Flandre, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8953778,
+    "longitude": 2.3826565
+  },
+  "Yerres": {
+    "adresse": "SAMSAH de l’Yerres, Rue de Paris, Combreux, Tournan-en-Brie, Torcy, Seine-et-Marne, Île-de-France, France métropolitaine, 77220, France",
+    "latitude": 48.7381035,
+    "longitude": 2.7604819
+  },
+  "avenue Foch": {
+    "adresse": "Avenue Foch, Quartier de la Porte-Dauphine, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+    "latitude": 48.8728625,
+    "longitude": 2.2815735
+  },
+  "avenue Montaigne": {
+    "adresse": "Avenue Montaigne, Quartier des Champs-Élysées, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8676934,
+    "longitude": 2.307626
+  },
+  "bois de Boulogne": {
+    "adresse": "Bois de Boulogne, Paris, Nanterre, Hauts-de-Seine, Île-de-France, France métropolitaine, 92200, France",
+    "latitude": 48.8640929,
+    "longitude": 2.2482579
+  },
+  "boulevard Bessières": {
+    "adresse": "Boulevard Bessières, Quartier des Épinettes, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8971869,
+    "longitude": 2.3212922
+  },
+  "boulevard Voltaire": {
+    "adresse": "Boulevard Voltaire, Quartier Saint-Ambroise, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8632896,
+    "longitude": 2.3709025
+  },
+  "boulevard de Sébastopol": {
+    "adresse": "Boulevard de Sébastopol, Quartier des Arts-et-Métiers, Paris 3e Arrondissement, Paris, Île-de-France, France métropolitaine, 75003, France",
+    "latitude": 48.8653312,
+    "longitude": 2.3520437
+  },
+  "canal de l'Ourcq": {
+    "adresse": "Canal de l'Ourcq, Rue de l'Ourcq, Quartier du Pont-de-Flandre, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8897362,
+    "longitude": 2.383347
+  },
+  "cité Blanche": {
+    "adresse": "Cité Blanche, Paris 19e Arrondissement, Paris, Île-de-France, France métropolitaine, 75019, France",
+    "latitude": 48.8836843,
+    "longitude": 2.3927036
+  },
+  "hôpital Saint-Louis": {
+    "adresse": "Hôpital Saint-Louis, Rue Juliette Dodu, Quartier de l'Hôpital Saint-Louis, Paris 10e Arrondissement, Paris, Île-de-France, France métropolitaine, 75010, France",
+    "latitude": 48.8738275,
+    "longitude": 2.3677007
+  },
+  "la Courneuve": {
+    "adresse": "Chantier Grand Paris Express Lignes 16/17 - Ouvrage September, 4000 Nord, La Courneuve, Saint-Denis, Seine-Saint-Denis, Île-de-France, France métropolitaine, 93120, France",
+    "latitude": 48.9295128,
+    "longitude": 2.4002285
+  },
+  "la Courtille": {
+    "adresse": "La Courtille, Rue de Belleville, Quartier de Belleville, Paris 20e Arrondissement, Paris, Île-de-France, France métropolitaine, 75020, France",
+    "latitude": 48.8721636,
+    "longitude": 2.3775745
+  },
+  "place Blanche": {
+    "adresse": "Place Blanche, Quartier Saint-Georges, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8835778,
+    "longitude": 2.3322582
+  },
+  "place Dauphine": {
+    "adresse": "Place Dauphine, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8564067,
+    "longitude": 2.3426549
+  },
+  "pont Mirabeau": {
+    "adresse": "Pont Mirabeau, Quartier d'Auteuil, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75016, France",
+    "latitude": 48.8466555,
+    "longitude": 2.2755839
+  },
+  "pont des Arts": {
+    "adresse": "Pont des Arts, Quartier de la Monnaie, Paris 6e Arrondissement, Paris, Île-de-France, France métropolitaine, 75006, France",
+    "latitude": 48.8584075,
+    "longitude": 2.3375477
+  },
+  "quai des Orfèvres": {
+    "adresse": "Quai des Orfèvres, Saint-Germain-l'Auxerrois, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8549246,
+    "longitude": 2.3435689
+  },
+  "rue Blanche": {
+    "adresse": "Rue Blanche, Quartier Saint-Georges, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8789216,
+    "longitude": 2.3315022
+  },
+  "rue Buffault": {
+    "adresse": "Rue Buffault, Quartier du Faubourg-Montmartre, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8750209,
+    "longitude": 2.3415255
+  },
+  "rue Didot": {
+    "adresse": "Rue Didot, Quartier de Plaisance, Paris 14e Arrondissement, Paris, Île-de-France, France métropolitaine, 75014, France",
+    "latitude": 48.8285674,
+    "longitude": 2.3163387
+  },
+  "rue Faidherbe": {
+    "adresse": "Rue Faidherbe, Quartier Sainte-Marguerite, Paris 11e Arrondissement, Paris, Île-de-France, France métropolitaine, 75011, France",
+    "latitude": 48.8505737,
+    "longitude": 2.3843868
+  },
+  "rue Gay-Lussac": {
+    "adresse": "Rue Gay-Lussac, Quartier du Val-de-Grâce, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8433497,
+    "longitude": 2.3425131
+  },
+  "rue Mouffetard": {
+    "adresse": "Rue Mouffetard, Quartier du Val-de-Grâce, Paris 5e Arrondissement, Paris, Île-de-France, France métropolitaine, 75005, France",
+    "latitude": 48.8434464,
+    "longitude": 2.349494
+  },
+  "rue Royale": {
+    "adresse": "Rue Royale, Quartier de la Madeleine, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8675225,
+    "longitude": 2.3226301
+  },
+  "rue Saint-Lazare": {
+    "adresse": "Rue Saint-Lazare, Quartier de l'Europe, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.875472,
+    "longitude": 2.3257799
+  },
+  "rue Saint-Vincent": {
+    "adresse": "Rue Saint-Vincent, Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.888274,
+    "longitude": 2.3426374
+  },
+  "rue de Berne": {
+    "adresse": "Rue de Berne, Quartier de l'Europe, Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8809907,
+    "longitude": 2.3231349
+  },
+  "rue de Lévis": {
+    "adresse": "Rue de Lévis, Quartier des Batignolles, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8838403,
+    "longitude": 2.313577
+  },
+  "rue de Rivoli": {
+    "adresse": "Rue de Rivoli, Quartier Saint-Merri, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.857218,
+    "longitude": 2.3526354
+  },
+  "rue de la Croix": {
+    "adresse": "Rue Sainte-Croix de la Bretonnerie, Quartier Saint-Gervais, Paris 4e Arrondissement, Paris, Île-de-France, France métropolitaine, 75004, France",
+    "latitude": 48.8581215,
+    "longitude": 2.3564605
+  },
+  "rue de la Paix": {
+    "adresse": "Rue de la Paix, Gaillon, Paris 2e Arrondissement, Paris, Île-de-France, France métropolitaine, 75002, France",
+    "latitude": 48.8692848,
+    "longitude": 2.3312305
+  },
+  "rue des Halles": {
+    "adresse": "Rue des Halles, Quartier Les Halles, Paris 1er Arrondissement, Paris, Île-de-France, France métropolitaine, 75001, France",
+    "latitude": 48.8603766,
+    "longitude": 2.3461085
+  },
+  "rue des Sablons": {
+    "adresse": "Rue des Sablons, Quartier de la Porte-Dauphine, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+    "latitude": 48.8649239,
+    "longitude": 2.2828075
+  },
+  "rue des Saules": {
+    "adresse": "Rue des Saules, Quartier de Clignancourt, Paris 18e Arrondissement, Paris, Île-de-France, France métropolitaine, 75018, France",
+    "latitude": 48.8906676,
+    "longitude": 2.3404685
+  },
+  "rue du Havre": {
+    "adresse": "Rue du Havre, Quartier de la Chaussée-d'Antin, Paris 9e Arrondissement, Paris, Île-de-France, France métropolitaine, 75009, France",
+    "latitude": 48.8739625,
+    "longitude": 2.3270225
+  },
+  "tour Eiffel": {
+    "adresse": "Tour Eiffel, 5, Avenue Anatole France, Quartier du Gros-Caillou, Paris 7e Arrondissement, Paris, Île-de-France, France métropolitaine, 75007, France",
+    "latitude": 48.8582599,
+    "longitude": 2.2945006
+  },
+  "Élysée": {
+    "adresse": "Paris 8e Arrondissement, Paris, Île-de-France, France métropolitaine, 75008, France",
+    "latitude": 48.8737284,
+    "longitude": 2.3103932
+  },
+  "Épinettes": {
+    "adresse": "Quartier des Épinettes, Paris 17e Arrondissement, Paris, Île-de-France, France métropolitaine, 75017, France",
+    "latitude": 48.8938086,
+    "longitude": 2.319934
+  },
+  "île Saint-Louis": {
+    "adresse": "Île Saint-Louis, Paris, Île-de-France, France métropolitaine, France",
+    "latitude": 48.8516049,
+    "longitude": 2.3567594
   }
 }
