@@ -314,7 +314,7 @@ Le code d'origine (un notebook de 2 700 lignes exporté en script) a été réé
 - **Géocodage** : requêtes espacées d'une seconde (conditions d'usage de Nominatim), cache, et les erreurs réseau ne sont plus enregistrées comme « lieu introuvable ».
 - **Données** : le lexique était présent en double (`lieux_paris/` et `lieux_paris/lieux_paris/`) avec des fichiers de conflit de fusion (`Puits_de_Paris_BASE_1344.json`…) ; `all_entites2.json` contenait deux objets JSON collés et n'était plus lisible. Tout a été dédupliqué ou réparé, et les noms de fichiers n'ont plus d'espaces ni d'accents.
 
-La version d'origine reste disponible via le tag [`version-originale-2022`](https://github.com/Tiiiagooo/Memoire/tree/version-originale-2022).
+La version d'origine reste disponible sur la branche [`version-originale-2022`](https://github.com/Tiiiagooo/Memoire/tree/version-originale-2022).
 
 ---
 
